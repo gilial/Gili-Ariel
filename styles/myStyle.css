@@ -448,21 +448,25 @@ footer a {
 }
 
 .route-summary{
-    display: flex;
-    align-items: flex-start;
-    margin-bottom: 40px;
+    display: flex !important;
+    align-items: center;
+    margin: 30px 0;
     gap: 20px;
+    width: 100%;
 }
 
 .route-summary #guideCharacter{
+    position: static !important;
     margin: 0;
-    height: 200px;
+    height: 150px;
     width: auto;
+    display: block;
 }
 .route-summary #speechBubble{
-    position: relative;
-    top:0;
-    right:0;
+    position: relative !important;
+    top:0 !important;
+    right:0 !important;
+    left: auto !important;
     width: auto;
     flex-grow: 1;
 }
@@ -483,34 +487,18 @@ footer a {
 }
 
 .route-summary #speechBubble::after {
+    content: "";
+    position: absolute;
     bottom:auto;
-    top:30px;
+    top:35px;
     left:auto;
-    right: -20px;
+    right: -14px;
     border-top: 10px solid transparent;
     border-bottom: 10px solid transparent;
     border-left: 10px solid #2f6b3f;
     border-right: none;
 }
 
-/*delete
-.guide-img{
-    display: inline-block;
-    vertical-align: middle;
-    height:120px;
-    width:auto;
-}
-
-.route-summary{
-    background-color: #f1f7ed;
-    border: 2px solid#d8e6d0;
-    border-radius: 14px;
-    padding: 20px;
-    margin-bottom: 30px;
-}
-
-
-*/
 .route-text{
     text-align: right;
 }
@@ -531,3 +519,20 @@ footer a {
     object-fit: cover;
 }
 
+map{
+    display: block;
+    max-width: 50%;
+    height: auto;
+    margin: 35px auto;
+    border: 2px solid #d8e6d0;
+    border-radius: 12px;
+}
+
+.route-text p{
+    background-color: #f1f7ed;
+    border: 2px solid #d8e6d0;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(31, 77, 54, 0.04);
+}
