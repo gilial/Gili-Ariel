@@ -1,27 +1,251 @@
-﻿<!DOCTYPE html>
-<html lang="">
+<!doctype html>
+<html lang="he">
 <head>
     <meta charset="utf-8" />
-    <title></title>
-    <meta name="description" content="" />
-    <meta name="keywords" content="" />
-    <meta name="author" content="" />
+    <title>קצת אוויר</title>
+    <meta name="description" content="אתר המלצות למסלולי טיול בטבע לפי אזורים ועונות השנה" />
+    <meta name="keywords" content="טיולים, טבע, מסלולים, צפון, מרכז, דרום, קיץ, חורף, אביב, סתיו" />
+    <meta name="author" content="אריאל פריידלין" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/pure-min.css" integrity="sha384-oAOxQR6DkCoMliIh8yFnu25d7Eq/PHS21PClpwjOTeU2jRSq11vu66rf90/cZr47" crossorigin="anonymous">
+    <link rel="icon" type="image/png" href="images/nature-icon.png" />
 
-    <link href="styles/reset.css" rel="stylesheet" />
+    <!-- CSS -->
+    <!--<link href="styles/reset.css" rel="stylesheet" />-->
     <link href="styles/myStyle.css" rel="stylesheet" />
 
-    <!-- JS -->
-    <script src="jScripts/jquery-1.12.0.min.js"></script>
-
-
+    <!-- Scripts -->
+    <script src="jScripts/JavaScript.js" type="text/javascript"></script>
 </head>
+
 <body>
-    <div id="container">
-        
-    </div>
+
+<div id="container">
+
+    <header id="top">
+
+        <div id="homeBanner">
+            <div id="bannerText">
+                <img id="siteLogo" src="images/site-logo-removebg-preview.png" alt="קצת אוויר" />
+                <p>האתר שיוציא אתכם מהמחשב אל הטבע</p>
+            </div>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">דף הבית</a></li>
+
+                <li>
+                    <a href="#">מסלולים לפי איזורים</a>
+                    <ul class="dropDown">
+                        <li><a href="north.html">מסלולים בצפון</a></li>
+                        <li><a href="center.html">מסלולים במרכז</a></li>
+                        <li><a href="south.html">מסלולים בדרום</a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="#">מסלולים לפי עונות השנה</a>
+                    <ul class="dropDown">
+                        <li><a href="summer.html">מסלולים לקיץ</a></li>
+                        <li><a href="winter.html">מסלולים לחורף</a></li>
+                        <li><a href="spring.html">מסלולים לאביב</a></li>
+                        <li><a href="autumn.html">מסלולים לסתיו</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="contact.html">צרו קשר</a></li>
+                <li><a href="about.html">אודות</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <main>
+
+        <section id="homeIntro">
+
+            <div id="mapSide">
+                <img id="israelMap" src="images/israel-map.png" alt="מפת ישראל" />
+            </div>
+
+            <div id="travelersRecommendations">
+
+                <h2>המלצות ממטיילים</h2>
+
+                <div class="recommendation">
+                    <p>
+                        "בתור מי שמבלה 10 שעות ביום מול מסכים, הסופ"שים שלי בדרך כלל נראו כמו המשך ישיר של השבוע –
+                        פשוט מול מסך אחר. האתר הזה באמת הוציא אותי מהמחשב אל הטבע. במקום לשרוף שעות בחיפושים
+                        ובסוף להישאר בבית, מצאתי מסלול מדהים תוך 3 דקות, ארזתי תיק ויצאתי.
+                        מומלץ בחום לכל מי שצריך ניתוק!"
+                    </p>
+                    <h3>– תומר ק., תל אביב</h3>
+                </div>
+
+                <div class="recommendation">
+                    <p>
+                        "הילדים שלי היו דבוקים לטאבלטים ולא משנה כמה ניסיתי לשכנע אותם לצאת,
+                        זה תמיד נגמר בוויכוחים. בזכות האתר מצאנו מסלול מעיינות קליל שהתאים לנו בול,
+                        עם הוראות הגעה מדויקות שלא השאירו מקום לברבורים. סוף סוף נשמנו קצת אוויר נקי."
+                    </p>
+                    <h3>– מיכל ד., מודיעין</h3>
+                </div>
+
+                <div class="recommendation">
+                    <p>
+                        "אתר חובה בסימניות! תמיד היה לי את החשק לטייל אבל לא היה לי כוח לחפור
+                        באינטרנט כדי למצוא לאן. הממשק פה פשוט, מהיר ומדויק.
+                        פשוט סוגר את הלפטופ ויוצא לדרך."
+                    </p>
+                    <h3>– עידן ושיר, חיפה</h3>
+                </div>
+
+            </div>
+
+            <div id="guideSide">
+
+                <div id="speechBubble">
+                    <p>
+                        אתם רואים? לא רק אני הולך לטייל. עוד הרבה אנשים כבר יצאו לדרך.
+                        בואו איתי ונמצא לכם את הטיול שהכי מתאים לכם.
+                    </p>
+                </div>
+
+                <img id="guideCharacter" src="images/madrich.png" alt="מדריך טיולים מצויר" />
+
+            </div>
+
+        </section>
+
+        <section class="contentSection greenSection">
+
+            <h2>בחרו איך בא לכם לטייל</h2>
+
+            <div class="tripBox">
+                <h3>לפי איזור בארץ</h3>
+                <p>
+                    בחרו מסלולים בצפון, במרכז או בדרום לפי המקום שמתאים לכם להגיע אליו.
+                </p>
+                <input type="button" value="הצג רעיון" onclick="showAreaTip()" />
+                <p id="areaResult" class="resultBox"></p>
+            </div>
+
+            <div class="tripBox">
+                <h3>לפי עונת השנה</h3>
+                <p>
+                    מצאו מסלול שמתאים למזג האוויר ולעונה שבה אתם רוצים לצאת לטייל.
+                </p>
+                <input type="button" value="הצג רעיון" onclick="showSeasonTip()" />
+                <p id="seasonResult" class="resultBox"></p>
+            </div>
+
+            <div class="tripBox">
+                <h3>טיול קצר להתאווררות</h3>
+                <p>
+                    אין לכם הרבה זמן? גם יציאה קצרה לטבע יכולה לשנות את כל היום.
+                </p>
+                <input type="button" value="תן לי רעיון" onclick="showShortTip()" />
+                <p id="shortResult" class="resultBox"></p>
+            </div>
+
+        </section>
+
+        <section class="contentSection">
+
+            <h2>מצא לי טיול קצר</h2>
+
+            <p>
+                לא בטוחים מאיפה להתחיל? כתבו כמה זמן פנוי יש לכם,
+                או לחצו על הכפתורים כדי לקבל רעיונות מהירים.
+            </p>
+
+            <div class="tripBox">
+                <h3>רעיון מתחלף</h3>
+                <p>
+                    לחצו על הכפתור ובכל פעם תקבלו רעיון קצר אחר ליציאה מהבית.
+                </p>
+
+                <input type="button" value="תן לי רעיון" onclick="showTip()" />
+
+                <p id="tipResult" class="resultBox"></p>
+            </div>
+
+            <div class="tripBox">
+                <h3>מקומות מומלצים</h3>
+                <p>
+                    לחצו על הכפתור כדי להציג רשימת מקומות פשוטים ונגישים לטיול.
+                </p>
+
+                <input type="button" value="הצג מקומות" onclick="showPlaces()" />
+
+                <ul id="placesList"></ul>
+            </div>
+
+            <div class="tripBox">
+                <h3>לפי הזמן שיש לכם</h3>
+                <p>
+                    כתבו כמה דקות יש לכם, והאתר יציע לכם סוג טיול מתאים.
+                </p>
+
+                <label for="timeText">כמה דקות יש לכם?</label>
+                <br />
+                <input id="timeText" type="text" />
+
+                <br />
+                <input type="button" value="קבל המלצה" onclick="checkTime()" />
+
+                <p id="recommendationResult" class="resultBox"></p>
+            </div>
+
+        </section>
+
+        <section class="contentSection greenSection">
+
+            <h2>למה בכלל לצאת לטבע?</h2>
+
+            <p>
+                לפעמים אנחנו מבלים שעות מול מסכים ושוכחים שאפשר לעצור לרגע.
+                האתר “קצת אוויר” נועד לעזור לכם למצוא מסלול פשוט ונגיש,
+                בלי להסתבך בחיפושים ארוכים.
+            </p>
+
+            <table>
+                <tr>
+                    <th>סוג טיול</th>
+                    <th>למי זה מתאים?</th>
+                    <th>מתי כדאי?</th>
+                </tr>
+
+                <tr>
+                    <td>מסלול קצר</td>
+                    <td>למי שרוצה להתאוורר בלי יום שלם בחוץ</td>
+                    <td>אחרי לימודים או בסוף שבוע קצר</td>
+                </tr>
+
+                <tr>
+                    <td>מסלול מים</td>
+                    <td>למשפחות, חברים ומי שאוהב טבע ירוק</td>
+                    <td>אביב וקיץ</td>
+                </tr>
+
+                <tr>
+                    <td>תצפית או מדבר</td>
+                    <td>למי שמחפש שקט ונוף פתוח</td>
+                    <td>סתיו וחורף</td>
+                </tr>
+            </table>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>קצת אוויר | סוגרים את המסך ויוצאים לדרך</p>
+        <a href="#top">חזרה לראש הדף</a>
+    </footer>
+
+</div>
+
 </body>
 </html>

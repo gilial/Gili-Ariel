@@ -1,5 +1,411 @@
-﻿body {
+body {
+    direction: rtl;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background-color: #eef5e8;
+    color: #243326;
+    margin: 0;
+    padding: 0;
+}
+
+#container {
+    width: 100%;
+    margin: 0 auto;
+    background-color: white;
+    border: 1px solid #c8d8bf;
+    box-sizing: border-box;
+}
+
+/* אזור עליון */
+header {
+    background-color: #2f6b3f;
+    color: white;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+/* באנר עליון */
+#homeBanner {
+    height: 220px;
+    background-image: url("../images/home-banner.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center 45%;
+    color: white;
+    padding-top: 30px;
+    box-sizing: border-box;
+}
+
+#bannerText {
+    width: 430px;
+    margin: 0 auto;
+    padding: 10px 14px;
+}
+
+#siteLogo {
+    width: 300px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+#homeBanner p {
+    font-size: 20px;
+    margin-top: 6px;
+    margin-bottom: 0;
+    color: white;
+}
+
+/* תפריט ניווט */
+nav {
+    background-color: #2f6b3f;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    font-size: 0;
+}
+
+nav li {
+    display: inline-block;
+    width: 20%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    vertical-align: top;
+}
+
+nav a {
+    display: block;
+    width: 100%;
+    height: 48px;
+    line-height: 48px;
+    padding: 0;
+    background-color: #f6f2e9;
+    color: #2f6b3f;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+nav a:hover {
+    background-color: #dfe8cf;
+    color: #1f4f2e;
+}
+
+/* תפריט נפתח */
+.dropDown {
+    display: none;
+    position: absolute;
+    top: 48px;
+    right: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+.dropDown li {
+    display: block;
+    width: 100%;
+}
+
+.dropDown a {
+    width: 100%;
+    background-color: #fffdf5;
+    color: #2f6b3f;
+    border-top: 1px solid #d8e6d0;
+}
+
+nav li:hover .dropDown {
+    display: block;
+}
+
+.dropDown a:hover {
+    background-color: #2f6b3f;
+    color: white;
+}
+
+/* אזור ההמלצות בדף הבית */
+#homeIntro {
+    padding: 25px 20px;
+    border-bottom: 1px solid #d8e6d0;
+    background-color: #fffdf5;
+    text-align: center;
+    font-size: 0;
+    direction: ltr;
+}
+
+/* צד שמאל - מפת ישראל */
+#mapSide {
+    display: inline-block;
+    width: 20%;
+    height: 430px;
+    vertical-align: top;
+    text-align: center;
+    font-size: 16px;
+    padding-right: 0;
+    box-sizing: border-box;
     direction: rtl;
 }
 
- 
+#israelMap {
+    height: 415px;
+    width: auto;
+    margin-top: 20px;
+    margin-right: 0;
+}
+
+/* מרכז - המלצות מטיילים */
+#travelersRecommendations {
+    display: inline-block;
+    width: 52%;
+    vertical-align: top;
+    margin-right: 2%;
+    margin-left: 2%;
+    text-align: right;
+    font-size: 16px;
+    direction: rtl;
+}
+
+#travelersRecommendations h2 {
+    color: #2f6b3f;
+    font-size: 34px;
+    margin-top: 0;
+    margin-bottom: 18px;
+    text-align: center;
+}
+
+/* כרטיסי המלצות */
+.recommendation {
+    background-color: #fffdf5;
+    border: 2px solid #d8e6d0;
+    border-radius: 18px;
+    padding: 15px;
+    margin-bottom: 14px;
+    box-shadow: 0 4px 10px rgba(31, 77, 54, 0.08);
+}
+
+.recommendation p {
+    font-size: 15px;
+    line-height: 160%;
+    margin-top: 0;
+    margin-bottom: 8px;
+}
+
+.recommendation h3 {
+    font-size: 16px;
+    margin: 0;
+    color: #2f6b3f;
+}
+
+/* צד ימין - מדריך */
+#guideSide {
+    display: inline-block;
+    width: 20%;
+    height: 430px;
+    vertical-align: top;
+    text-align: left;
+    position: relative;
+    font-size: 16px;
+    padding-left: 10px;
+    box-sizing: border-box;
+    direction: rtl;
+}
+
+#guideCharacter {
+    height: 330px;
+    width: auto;
+    margin-top: 85px;
+    margin-left: 10px;
+}
+
+/* בועת דיבור של המדריך */
+#speechBubble {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    width: 190px;
+    background-color: #f6f2e9;
+    color: #243326;
+    border: 2px solid #2f6b3f;
+    border-radius: 18px;
+    padding: 12px;
+    text-align: right;
+    z-index: 2;
+}
+
+#speechBubble p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 150%;
+}
+
+/* המשולש של בועת הדיבור */
+#speechBubble:after {
+    content: "";
+    position: absolute;
+    bottom: -18px;
+    left: 45px;
+    width: 0;
+    height: 0;
+    border-top: 18px solid #2f6b3f;
+    border-left: 6px solid transparent;
+    border-right: 22px solid transparent;
+}
+
+/* אזורי תוכן כלליים */
+.contentSection {
+    padding: 35px;
+    border-bottom: 1px solid #d8e6d0;
+    text-align: center;
+}
+
+.greenSection {
+    background-color: #f1f7ed;
+}
+
+.contentSection h2 {
+    text-align: center;
+    font-size: 34px;
+    color: #2f6b3f;
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+h2 {
+    color: #2f6b3f;
+}
+
+h3 {
+    color: #2f6b3f;
+}
+
+p {
+    font-size: 17px;
+    line-height: 170%;
+}
+
+/* כרטיסיות */
+.tripBox {
+    display: inline-block;
+    width: 30%;
+    height: 430px;
+    vertical-align: top;
+    background-color: #fffdf5;
+    border: 2px solid #d8e6d0;
+    border-radius: 18px;
+    padding: 24px;
+    margin: 1%;
+    text-align: center;
+    box-sizing: border-box;
+    box-shadow: 0 4px 10px rgba(31, 77, 54, 0.08);
+}
+
+.tripBox h3 {
+    margin-top: 0;
+    font-size: 26px;
+    color: #2f6b3f;
+}
+
+.tripBox p {
+    font-size: 18px;
+    line-height: 170%;
+    min-height: 85px;
+}
+
+/* כפתורים בתוך הכרטיסים */
+.tripBox input[type="button"] {
+    background-color: #2f6b3f;
+    color: white;
+    border: none;
+    width: 155px;
+    height: 42px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.tripBox input[type="button"]:hover {
+    background-color: #1f4f2e;
+}
+
+/* תוצאות בתוך הכרטיסים */
+.tripBox .resultBox {
+    background-color: #f7f1df;
+    border: 1px solid #c8d8bf;
+    border-radius: 10px;
+    padding: 12px;
+    min-height: 70px;
+    margin-top: 16px;
+    font-size: 16px;
+    line-height: 160%;
+}
+
+#placesList {
+    font-size: 16px;
+    line-height: 170%;
+    text-align: right;
+    padding-right: 24px;
+    margin-top: 16px;
+    min-height: 70px;
+}
+
+label {
+    font-size: 17px;
+}
+
+input[type="text"] {
+    width: 170px;
+    height: 32px;
+    font-size: 17px;
+    margin-top: 5px;
+    margin-bottom: 8px;
+    border: 1px solid #2f6b3f;
+    border-radius: 6px;
+}
+
+/* טבלה */
+table {
+    width: 100%;
+    border: 2px solid #2f6b3f;
+    border-collapse: collapse;
+    background-color: white;
+}
+
+th {
+    background-color: #2f6b3f;
+    color: white;
+    padding: 12px;
+    border: 1px solid #2f6b3f;
+    font-size: 17px;
+}
+
+td {
+    padding: 12px;
+    border: 1px solid #2f6b3f;
+    font-size: 16px;
+}
+
+/* פוטר */
+footer {
+    background-color: #243326;
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+footer p {
+    margin-top: 0;
+}
+
+footer a {
+    color: #f6f2e9;
+    font-weight: bold;
+}
