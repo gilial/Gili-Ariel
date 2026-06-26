@@ -411,22 +411,86 @@ footer a {
 }
 
 .contentHero{
-    position: relative;
+    background-image: url("../images/north-hero.png");
+    background-size: cover;
+    background-position: center;
     width: 100%;
-    height: 300px;
-    overflow: hidden;
-}
-
-.contentHero img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: 220px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .contentHero h1{
-    position: absolute;
-    text-align: center;
     color: white;
     font-size: 40px;
+    margin: 0;
     
 }
+
+.route-content{
+    padding: 35px;
+    background-color: #fffdf5;
+}
+
+.route-header{
+    text-align: right;
+    margin-bottom: 30px;
+}
+
+.route-header h2{
+    display: inline-block;
+    vertical-align: middle;
+    color: #2f6b3f;
+    font-size: 34px;
+    margin: 0 0 0 20px;
+}
+
+.guide-img{
+    display: inline-block;
+    vertical-align: middle;
+    height:120px;
+    width:auto;
+}
+
+.route-summary{
+    background-color: #f1f7ed;
+    border: 2px solid#d8e6d0;
+    border-radius: 14px;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.route-summary ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.route-summary ul li {
+    font-size: 17px;
+    line-height: 180%;
+    color: black;
+}
+
+.route-summary strong {
+    color: #2f6b3f;
+}
+
+.route-text{
+    text-align: right;
+}
+
+.route-text p{
+    margin-bottom: 25px;
+    white-space: pre-line;
+}
+
+.route-text img{
+    display: block;
+    max-width: 80%;
+    height: auto;
+    margin: 30px auto;
+    border: 2px solid #d8e6d0;
+    border-radius: 10px;
+}
+
