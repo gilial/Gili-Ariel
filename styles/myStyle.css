@@ -458,7 +458,7 @@ footer a {
 .route-summary #guideCharacter{
     position: static !important;
     margin: 0;
-    height: 180px;
+    height: 2000px;
     width: auto;
     display: block;
 }
