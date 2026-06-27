@@ -469,15 +469,16 @@ p {
 
 #trailMapBox {
     position: relative;
-    width: 100%;
+    width: 88%;
     height: 560px;
-    margin: 10px 0;
+    margin: 10px 6% 0 6%;
     text-align: center;
+    overflow: hidden;
 }
 
 #trailMapBox img {
-    height: 500px;
-    max-width: 64%;
+    height: 470px;
+    max-width: 56%;
     margin-top: 0;
     opacity: 0.88;
 }
@@ -500,28 +501,28 @@ p {
 
 .topLeftInfo {
     top: 20px;
-    left: 2%;
+    left: 0;
 }
 
 .topRightInfo {
     top: 20px;
-    right: 2%;
+    right: 0;
 }
 
 .bottomLeftInfo {
     bottom: 18px;
-    left: 2%;
+    left: 0;
 }
 
 .bottomRightInfo {
     bottom: 18px;
-    right: 2%;
+    right: 0;
 }
 
 #trailResult {
     position: absolute;
-    width: 72%;
-    right: 14%;
+    width: 82%;
+    right: 9%;
     bottom: 70px;
     margin: 0;
     padding: 12px;
@@ -533,6 +534,7 @@ p {
     color: #243326;
     z-index: 3;
     box-shadow: 0 3px 8px #e6ddcc;
+    box-sizing: border-box;
 }
 
 .trailQuestionBox {
@@ -580,6 +582,78 @@ p {
     margin: 18px auto 0 auto;
     border-radius: 12px;
     font-size: 17px;
+}
+
+@media screen and (max-width: 1000px) {
+    #trailFinderSection {
+        padding-right: 1%;
+        padding-left: 1%;
+    }
+
+    .trailIntro {
+        width: 92%;
+    }
+
+    #trailChoiceArea {
+        display: block;
+        width: 94%;
+        margin: 0 3%;
+    }
+
+    #trailResultArea {
+        display: block;
+        width: 94%;
+        height: 640px;
+        margin: 18px 3% 0 3%;
+        padding: 18px;
+    }
+
+    #trailMapBox {
+        width: 92%;
+        height: 500px;
+        margin: 8px 4% 0 4%;
+    }
+
+    #trailMapBox img {
+        height: 430px;
+        max-width: 54%;
+    }
+
+    .trailInfoBox {
+        width: 126px;
+        font-size: 15px;
+        padding: 8px 6px;
+    }
+
+    #trailResult {
+        width: 78%;
+        right: 11%;
+        bottom: 58px;
+        font-size: 13px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .trailQuestionBox {
+        width: 96%;
+        height: auto;
+        min-height: 180px;
+        margin: 0 2% 14px 2%;
+    }
+
+    #trailResultArea {
+        height: 620px;
+    }
+
+    #trailMapBox img {
+        height: 390px;
+        max-width: 50%;
+    }
+
+    .trailInfoBox {
+        width: 112px;
+        font-size: 14px;
+    }
 }
 
 table {
