@@ -1,0 +1,267 @@
+﻿<!doctype html>
+<html lang="he">
+<head>
+    <meta charset="utf-8" />
+    <title>קצת אוויר</title>
+    <meta name="description" content="אתר המלצות למסלולי טיול בטבע לפי אזורים ועונות השנה" />
+    <meta name="keywords" content="טיולים, טבע, מסלולים, צפון, מרכז, דרום, קיץ, חורף, אביב, סתיו" />
+    <meta name="author" content="אריאל פריידלין" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+    <link rel="icon" type="image/png" href="images/nature-icon.png" />
+
+    <link href="styles/myStyle.css" rel="stylesheet" />
+    <script src="jScripts/JavaScript.js"></script>
+</head>
+
+<body>
+
+<div id="container">
+
+    <header id="top">
+
+        <div id="topBar">
+            <div id="brandArea">
+                <img id="siteLogo" src="images/site-logo-removebg-preview.png" alt="קצת אוויר" />
+                <p>האתר שיוציא אתכם מהמחשב אל הטבע</p>
+            </div>
+
+            <nav>
+                <ul>
+                    <li><a href="main.html">🏠 דף הבית</a></li>
+
+                    <li>
+                        <a href="#">📍 מסלולים לפי איזורים</a>
+                        <ul class="dropDown">
+                            <li><a href="North.html">⛰️ מסלולים בצפון</a></li>
+                            <li><a href="Center.html">🌳 מסלולים במרכז</a></li>
+                            <li><a href="South.html">🌵 מסלולים בדרום</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="#">🍃 מסלולים לפי עונות השנה</a>
+                        <ul class="dropDown">
+                            <li><a href="#" onclick="return false">☀️ מסלולים לקיץ</a></li>
+                            <li><a href="#" onclick="return false">❄️ מסלולים לחורף</a></li>
+                            <li><a href="#" onclick="return false">🌸 מסלולים לאביב</a></li>
+                            <li><a href="#" onclick="return false">🍂 מסלולים לסתיו</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="#">👥 אודות</a>
+                        <ul class="dropDown">
+                            <li><a href="siteMap.html">🗺️ מפת האתר</a></li>
+                            <li><a href="aboutUs.html">🌿 קצת אלינו</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="#" onclick="return false">✉️ צרו קשר</a></li>
+                </ul>
+            </nav>
+        </div>
+
+    </header>
+
+    <main>
+
+        <section id="homeIntro">
+
+            <div id="natureImageSide">
+                <div id="introText">
+                    <h1>יוצאים מהמסך אל הטבע</h1>
+                    <p>רעיונות רגועים למסלולים קצרים, עונות השנה וקצת אוויר באמצע היום</p>
+                </div>
+
+                <div id="speechBubble">
+                    <p>
+                        אתם רואים? לא רק אני הולך לטייל. עוד הרבה אנשים כבר יצאו לדרך.
+                        בואו איתי ונמצא לכם את הטיול שהכי מתאים לכם.
+                    </p>
+                </div>
+
+                <img id="israelMap" src="images/israel-map.png" alt="מפת ישראל" />
+
+                <div id="travelersRecommendations">
+
+                <h2>המלצות ממטיילים</h2>
+
+                <div class="recommendation">
+                    <p>
+                        "בתור מי שמבלה 10 שעות ביום מול מסכים, הסופ"שים שלי בדרך כלל נראו כמו המשך ישיר של השבוע –
+                        פשוט מול מסך אחר. האתר הזה באמת הוציא אותי מהמחשב אל הטבע. במקום לשרוף שעות בחיפושים
+                        ובסוף להישאר בבית, מצאתי מסלול מדהים תוך 3 דקות, ארזתי תיק ויצאתי.
+                        מומלץ בחום לכל מי שצריך ניתוק!"
+                    </p>
+                    <h3>– תומר ק., תל אביב</h3>
+                </div>
+
+                <div class="recommendation">
+                    <p>
+                        "הילדים שלי היו דבוקים לטאבלטים ולא משנה כמה ניסיתי לשכנע אותם לצאת,
+                        זה תמיד נגמר בוויכוחים. בזכות האתר מצאנו מסלול מעיינות קליל שהתאים לנו בול,
+                        עם הוראות הגעה מדויקות שלא השאירו מקום לברבורים. סוף סוף נשמנו קצת אוויר נקי."
+                    </p>
+                    <h3>– מיכל ד., מודיעין</h3>
+                </div>
+
+                <div class="recommendation">
+                    <p>
+                        "אתר חובה בסימניות! תמיד היה לי את החשק לטייל אבל לא היה לי כוח לחפור
+                        באינטרנט כדי למצוא לאן. הממשק פה פשוט, מהיר ומדויק.
+                        פשוט סוגר את הלפטופ ויוצא לדרך."
+                    </p>
+                    <h3>– עידן ושיר, חיפה</h3>
+                </div>
+
+                </div>
+            </div>
+
+        </section>
+
+        <section id="trailFinderSection" class="contentSection">
+
+            <h2>בואו נמצא לכם מסלול</h2>
+
+            <p class="trailIntro">
+                ענו על כמה שאלות קצרות, והמדריך שלנו יציע לכם כיוון לטיול שמתאים לזמן, לעונה ולסגנון שלכם.
+            </p>
+
+            <div id="trailFinderBox">
+                <div id="trailChoiceArea">
+                    <div class="trailQuestionBox">
+                        <h3>באיזה אזור תרצו לטייל?</h3>
+                        <label><input type="radio" id="areaNorth" name="trailArea" onclick="chooseArea('בצפון', 'mapNorth')" /> צפון</label>
+                        <label><input type="radio" id="areaCenter" name="trailArea" onclick="chooseArea('במרכז', 'mapCenter')" /> מרכז</label>
+                        <label><input type="radio" id="areaSouth" name="trailArea" onclick="chooseArea('בדרום', 'mapSouth')" /> דרום</label>
+                        <label><input type="radio" id="areaAny" name="trailArea" onclick="chooseArea('באזור שמתאים לכם', 'mapGeneral')" /> לא משנה לי</label>
+                    </div>
+
+                    <div class="trailQuestionBox">
+                        <h3>כמה זמן יש לכם?</h3>
+                        <label><input type="radio" id="timeShort" name="trailTime" onclick="chooseTime('לזמן קצר', '⏱️ עד שעה')" /> עד שעה</label>
+                        <label><input type="radio" id="timeMedium" name="trailTime" onclick="chooseTime('לשעה עד שלוש שעות', '⏱️ 1-3 שעות')" /> שעה עד שלוש שעות</label>
+                        <label><input type="radio" id="timeHalf" name="trailTime" onclick="chooseTime('לחצי יום', '⏱️ חצי יום')" /> חצי יום</label>
+                        <label><input type="radio" id="timeFull" name="trailTime" onclick="chooseTime('ליום שלם', '⏱️ יום שלם')" /> יום שלם</label>
+                    </div>
+
+                    <div class="trailQuestionBox">
+                        <h3>עם מי אתם יוצאים?</h3>
+                        <label><input type="radio" id="whoAlone" name="trailWith" onclick="chooseWith('לטיול לבד', '🚶 לבד')" /> לבד</label>
+                        <label><input type="radio" id="whoFriends" name="trailWith" onclick="chooseWith('לטיול עם חברים', '👥 חברים')" /> עם חברים</label>
+                        <label><input type="radio" id="whoFamily" name="trailWith" onclick="chooseWith('לטיול משפחתי', '👨‍👩‍👧 משפחה')" /> עם משפחה</label>
+                        <label><input type="radio" id="whoKids" name="trailWith" onclick="chooseWith('לטיול עם ילדים', '🧒 ילדים')" /> עם ילדים</label>
+                    </div>
+
+                    <div class="trailQuestionBox">
+                        <h3>איזה סוג טבע אתם מעדיפים?</h3>
+                        <label><input type="radio" id="natureWater" name="trailNature" onclick="chooseNature('עם מים', 'water', '💧 מים')" /> מים</label>
+                        <label><input type="radio" id="natureForest" name="trailNature" onclick="chooseNature('עם יער וצל', 'forest', '🌳 יער וצל')" /> יער וצל</label>
+                        <label><input type="radio" id="natureView" name="trailNature" onclick="chooseNature('עם תצפית ונוף', 'view', '🏞️ נוף')" /> תצפית ונוף</label>
+                        <label><input type="radio" id="natureDesert" name="trailNature" onclick="chooseNature('עם מדבר ושקט', 'desert', '🌵 מדבר')" /> מדבר ושקט</label>
+                        <label><input type="radio" id="natureAny" name="trailNature" onclick="chooseNature('עם טבע נעים ומרגיע', 'any', '🌿 טבע')" /> לא משנה לי</label>
+                    </div>
+
+                    <div class="trailQuestionBox">
+                        <h3>כמה אתם רוצים להתאמץ?</h3>
+                        <label><input type="radio" id="effortAir" name="trailEffort" onclick="chooseEffort('קליל מאוד')" /> רק לנשום קצת אוויר</label>
+                        <label><input type="radio" id="effortEasy" name="trailEffort" onclick="chooseEffort('בהליכה קלה')" /> הליכה קלה</label>
+                        <label><input type="radio" id="effortMedium" name="trailEffort" onclick="chooseEffort('ברמת קושי בינונית')" /> מסלול בינוני</label>
+                        <label><input type="radio" id="effortHard" name="trailEffort" onclick="chooseEffort('מאתגר יותר')" /> תאתגרו אותי</label>
+                    </div>
+
+                    <div class="trailQuestionBox">
+                        <h3>באיזו עונה אתם מטיילים?</h3>
+                        <label><input type="radio" id="seasonSummer" name="trailSeason" onclick="chooseSeason('בקיץ', 'summer', '☀️ קיץ')" /> קיץ</label>
+                        <label><input type="radio" id="seasonWinter" name="trailSeason" onclick="chooseSeason('בחורף', 'winter', '❄️ חורף')" /> חורף</label>
+                        <label><input type="radio" id="seasonSpring" name="trailSeason" onclick="chooseSeason('באביב', 'spring', '🌸 אביב')" /> אביב</label>
+                        <label><input type="radio" id="seasonAutumn" name="trailSeason" onclick="chooseSeason('בסתיו', 'autumn', '🍂 סתיו')" /> סתיו</label>
+                    </div>
+
+                    <input id="findTrailButton" type="button" value="מצא לי מסלול" onclick="findTrail()" />
+                </div>
+
+                <div id="trailResultArea">
+                    <h3>🌿 ההמלצה שלכם</h3>
+                    <div id="trailMapBox">
+                        <div id="seasonInfo" class="trailInfoBox topLeftInfo" hidden></div>
+                        <div id="timeInfo" class="trailInfoBox topRightInfo" hidden></div>
+                        <img id="mapGeneral" src="images/israel-map.png" alt="מפת ישראל" />
+                        <img id="mapNorth" src="images/NorthMapFixed.png" alt="מפת צפון" hidden />
+                        <img id="mapCenter" src="images/CenterMapFixed.png" alt="מפת מרכז" hidden />
+                        <img id="mapSouth" src="images/SouthMapFixed.png" alt="מפת דרום" hidden />
+                        <div id="natureInfo" class="trailInfoBox bottomLeftInfo" hidden></div>
+                        <div id="withInfo" class="trailInfoBox bottomRightInfo" hidden></div>
+                        <p id="trailResult" hidden></p>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <section id="quickIdeaSection" class="contentSection">
+
+            <div id="wideTipBox" class="tripBox">
+                <h3>💡 רעיון מתחלף</h3>
+                <p>
+                    לחצו על הכפתור ובכל פעם תקבלו רעיון קצר אחר ליציאה מהבית.
+                </p>
+
+                <input type="button" value="תן לי רעיון" onclick="showTip()" />
+
+                <p id="tipResult" class="resultBox"></p>
+            </div>
+
+        </section>
+
+        <section class="contentSection">
+
+            <h2>למה בכלל לצאת לטבע?</h2>
+
+            <p>
+                לפעמים אנחנו מבלים שעות מול מסכים ושוכחים שאפשר לעצור לרגע.
+                האתר “קצת אוויר” נועד לעזור לכם למצוא מסלול פשוט ונגיש,
+                בלי להסתבך בחיפושים ארוכים.
+            </p>
+
+            <table>
+                <tr>
+                    <th>סוג טיול</th>
+                    <th>למי זה מתאים?</th>
+                    <th>מתי כדאי?</th>
+                </tr>
+
+                <tr>
+                    <td>מסלול קצר</td>
+                    <td>למי שרוצה להתאוורר בלי יום שלם בחוץ</td>
+                    <td>אחרי לימודים או בסוף שבוע קצר</td>
+                </tr>
+
+                <tr>
+                    <td>מסלול מים</td>
+                    <td>למשפחות, חברים ומי שאוהב טבע ירוק</td>
+                    <td>אביב וקיץ</td>
+                </tr>
+
+                <tr>
+                    <td>תצפית או מדבר</td>
+                    <td>למי שמחפש שקט ונוף פתוח</td>
+                    <td>סתיו וחורף</td>
+                </tr>
+            </table>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>קצת אוויר | סוגרים את המסך ויוצאים לדרך</p>
+        <a href="#top">חזרה לראש הדף</a>
+    </footer>
+
+</div>
+
+</body>
+</html>
+
