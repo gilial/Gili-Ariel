@@ -177,16 +177,16 @@ nav li:hover .dropDown {
 #israelMap {
     position: absolute;
     top: 18px;
-    right: 1%;
-    height: 520px;
+    right: 2%;
+    height: 500px;
     width: auto;
 }
 
 #introText {
     position: absolute;
     top: 18px;
-    right: 18%;
-    width: 39%;
+    right: 23%;
+    width: 38%;
     text-align: center;
     direction: rtl;
     color: #2a211b;
@@ -246,10 +246,10 @@ nav li:hover .dropDown {
 
 #travelersRecommendations {
     display: block;
-    width: 39%;
+    width: 38%;
     position: absolute;
     top: 115px;
-    right: 18%;
+    right: 23%;
     margin: 0;
     padding: 12px 18px 16px 18px;
     background-color: #fff8e8;
@@ -469,15 +469,15 @@ p {
 
 #trailMapBox {
     position: relative;
-    width: 560px;
+    width: 100%;
     height: 560px;
-    margin: 10px auto;
+    margin: 10px 0;
     text-align: center;
 }
 
 #trailMapBox img {
-    height: 540px;
-    max-width: 400px;
+    height: 500px;
+    max-width: 64%;
     margin-top: 0;
     opacity: 0.88;
 }
@@ -500,28 +500,28 @@ p {
 
 .topLeftInfo {
     top: 20px;
-    left: 0;
+    left: 2%;
 }
 
 .topRightInfo {
     top: 20px;
-    right: 0;
+    right: 2%;
 }
 
 .bottomLeftInfo {
     bottom: 18px;
-    left: 0;
+    left: 2%;
 }
 
 .bottomRightInfo {
     bottom: 18px;
-    right: 0;
+    right: 2%;
 }
 
 #trailResult {
     position: absolute;
-    width: 330px;
-    right: 115px;
+    width: 72%;
+    right: 14%;
     bottom: 70px;
     margin: 0;
     padding: 12px;
