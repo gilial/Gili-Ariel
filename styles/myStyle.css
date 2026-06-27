@@ -59,7 +59,7 @@ header {
     margin: 0 auto 2px auto;
 }
 
-#topBar nav {
+nav {
     display: inline-block;
     width: 84%;
     vertical-align: top;
@@ -68,14 +68,14 @@ header {
     text-align: center;
 }
 
-#topBar nav ul {
+nav ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
     font-size: 0;
 }
 
-#topBar nav li {
+nav li {
     display: inline-block;
     width: 20%;
     margin: 0;
@@ -84,7 +84,7 @@ header {
     vertical-align: top;
 }
 
-#topBar nav a {
+nav a {
     display: block;
     width: 96%;
     height: 62px;
@@ -103,7 +103,7 @@ header {
     box-shadow: 0 3px 8px #e6ddcc;
 }
 
-#topBar nav a:hover {
+nav a:hover {
     background-color: #b9b68e;
     color: white;
 }
