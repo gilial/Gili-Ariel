@@ -467,6 +467,47 @@ p {
     color: #1f4d36;
 }
 
+.trailTextBox,
+.trailNotesBox {
+    display: block;
+    width: 96%;
+    margin: 0 1% 10px 1%;
+    padding: 0 10px 10px 10px;
+    background-color: #fffdf5;
+    border: 1px solid #d8e6d0;
+    border-radius: 14px;
+    box-shadow: 0 3px 9px #e6ddcc;
+    box-sizing: border-box;
+}
+
+.trailTextBox h3 {
+    margin: 0 -10px 8px -10px;
+    padding: 8px 10px;
+    background-color: #1f4d36;
+    color: #fffdf5;
+    border-radius: 14px 14px 0 0;
+    font-size: 16px;
+}
+
+.trailTextBox label,
+.trailNotesBox label {
+    display: inline-block;
+    margin-left: 12px;
+    font-size: 15px;
+}
+
+.trailTextBox input,
+.trailNotesBox textarea {
+    width: 240px;
+    height: 32px;
+    border: 1px solid #2f6b3f;
+    border-radius: 8px;
+    font-size: 17px;
+    padding: 3px 8px;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
 #trailMapBox {
     position: relative;
     width: 88%;
@@ -539,32 +580,38 @@ p {
 .trailQuestionBox {
     display: inline-block;
     width: 47%;
-    height: 198px;
+    height: 122px;
     vertical-align: top;
     background-color: #fffdf5;
     border: 1px solid #d8e6d0;
     border-radius: 14px;
-    margin: 0 1% 16px 1%;
-    padding: 0 14px 14px 14px;
+    margin: 0 1% 10px 1%;
+    padding: 0 10px 10px 10px;
     box-shadow: 0 3px 9px #e6ddcc;
     box-sizing: border-box;
 }
 
+.trailNotesBox textarea {
+    width: 850px;
+    height: 130px;
+    vertical-align: top;
+}
+
 .trailQuestionBox h3 {
-    margin: 0 -14px 12px -14px;
-    padding: 10px 14px;
+    margin: 0 -10px 8px -10px;
+    padding: 8px 10px;
     background-color: #1f4d36;
     color: #fffdf5;
     border-radius: 14px 14px 0 0;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .trailQuestionBox label {
     display: inline-block;
     width: 47%;
-    margin: 5px 1%;
-    font-size: 15px;
-    line-height: 145%;
+    margin: 3px 1%;
+    font-size: 14px;
+    line-height: 130%;
     color: #243326;
     vertical-align: top;
     box-sizing: border-box;
@@ -577,10 +624,15 @@ p {
 #findTrailButton {
     display: block;
     width: 190px;
-    height: 46px;
-    margin: 18px auto 0 auto;
+    height: 42px;
+    margin: 10px auto 0 auto;
     border-radius: 12px;
     font-size: 17px;
+    opacity: 0.5;
+}
+
+#findTrailButton:enabled {
+    opacity: 1;
 }
 
 @media screen and (max-width: 1000px) {
@@ -636,12 +688,12 @@ p {
     .trailQuestionBox {
         width: 96%;
         height: auto;
-        min-height: 180px;
+        min-height: 122px;
         margin: 0 2% 14px 2%;
     }
 
     #trailResultArea {
-        height: 620px;
+        height: 650px;
     }
 
     #trailMapBox img {
@@ -1083,4 +1135,3 @@ footer a {
     color: #f6f2e9;
     font-weight: bold;
 }
-
