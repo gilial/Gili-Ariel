@@ -59,7 +59,7 @@ header {
     margin: 0 auto 2px auto;
 }
 
-nav {
+#topBar nav {
     display: inline-block;
     width: 84%;
     vertical-align: top;
@@ -68,14 +68,14 @@ nav {
     text-align: center;
 }
 
-nav ul {
+#topBar nav ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
     font-size: 0;
 }
 
-nav li {
+#topBar nav li {
     display: inline-block;
     width: 20%;
     margin: 0;
@@ -84,7 +84,7 @@ nav li {
     vertical-align: top;
 }
 
-nav a {
+#topBar nav a {
     display: block;
     width: 96%;
     height: 62px;
@@ -103,7 +103,7 @@ nav a {
     box-shadow: 0 3px 8px #e6ddcc;
 }
 
-nav a:hover {
+#topBar nav a:hover {
     background-color: #b9b68e;
     color: white;
 }
@@ -1156,3 +1156,4 @@ footer a {
     content: ">>";
     margin-left: 10px;
 }
+
