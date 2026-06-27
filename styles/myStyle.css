@@ -478,7 +478,7 @@ p {
 
 #trailMapBox img {
     width: 270px;
-    margin-top: 105px;
+    margin-top: 120px;
     opacity: 0.88;
 }
 
@@ -509,12 +509,12 @@ p {
 }
 
 .bottomLeftInfo {
-    bottom: 18px;
+    bottom: 72px;
     left: 0;
 }
 
 .bottomRightInfo {
-    bottom: 18px;
+    bottom: 72px;
     right: 0;
 }
 
@@ -615,7 +615,7 @@ p {
 
     #trailMapBox img {
         width: 245px;
-        margin-top: 90px;
+        margin-top: 118px;
     }
 
     .trailInfoBox {
@@ -646,7 +646,7 @@ p {
 
     #trailMapBox img {
         width: 215px;
-        margin-top: 82px;
+        margin-top: 110px;
     }
 
     .trailInfoBox {
