@@ -1144,7 +1144,7 @@ footer a {
     
 }
 
-.breadcrumbs ul {
+.breadcrumbs>ul {
     display: flex;
     gap: 10px;
     list-style: none;
@@ -1152,7 +1152,7 @@ footer a {
     margin: 0;
 }
 
-.breadcrumbs li:not(:last-child)::after {
-    content: "<<";
+.breadcrumbs>ul>li:not(:last-child)::after {
+    content: ">>";
     margin-left: 10px;
 }
