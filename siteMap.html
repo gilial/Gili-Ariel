@@ -1,0 +1,128 @@
+﻿<!doctype html>
+<html lang="he">
+<head>
+    <meta charset="utf-8" />
+    <title>מפת האתר - קצת אוויר</title>
+    <meta name="description" content="מפת האתר של קצת אוויר" />
+    <meta name="keywords" content="מפת אתר, קצת אוויר, טיולים, טבע" />
+    <meta name="author" content="אריאל פריידלין" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+    <link rel="icon" type="image/png" href="images/nature-icon.png" />
+    <link href="styles/myStyle.css" rel="stylesheet" />
+</head>
+
+<body>
+
+<div id="container">
+
+    <header id="top">
+        <div id="topBar">
+            <div id="brandArea">
+                <img id="siteLogo" src="images/site-logo-removebg-preview.png" alt="קצת אוויר" />
+                <p>האתר שיוציא אתכם מהמחשב אל הטבע</p>
+            </div>
+
+            <nav>
+                <ul>
+                    <li><a href="main.html">🏠 דף הבית</a></li>
+
+                    <li>
+                        <a href="#">📍 מסלולים לפי איזורים</a>
+                        <ul class="dropDown">
+                            <li><a href="North.html">⛰️ מסלולים בצפון</a></li>
+                            <li><a href="Center.html">🌳 מסלולים במרכז</a></li>
+                            <li><a href="South.html">🌵 מסלולים בדרום</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="#">🍃 מסלולים לפי עונות השנה</a>
+                        <ul class="dropDown">
+                            <li><a href="#" onclick="return false">☀️ מסלולים לקיץ</a></li>
+                            <li><a href="#" onclick="return false">❄️ מסלולים לחורף</a></li>
+                            <li><a href="#" onclick="return false">🌸 מסלולים לאביב</a></li>
+                            <li><a href="#" onclick="return false">🍂 מסלולים לסתיו</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="#">👥 אודות</a>
+                        <ul class="dropDown">
+                            <li><a href="siteMap.html">🗺️ מפת האתר</a></li>
+                            <li><a href="aboutUs.html">🌿 קצת אלינו</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="#" onclick="return false">✉️ צרו קשר</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="siteMapPage" class="contentSection">
+            <h2>מפת האתר</h2>
+
+            <p id="siteMapIntro">
+                בעמוד הזה אפשר לראות את כל העמודים הקיימים והרלוונטיים באתר לפי היררכיה.
+                המפה עוזרת למצוא במהירות את החלקים המרכזיים באתר “קצת אוויר”.
+            </p>
+
+            <div id="siteMapTree">
+                <div class="siteMapMainBox">
+                    <a href="main.html">🏠 דף הבית</a>
+                    <p>עמוד הפתיחה של האתר, המלצות מטיילים וטופס התאמת מסלול.</p>
+                </div>
+
+                <div class="siteMapGroup">
+                    <h3>📍 מסלולים לפי איזורים</h3>
+                    <ul>
+                        <li><a href="North.html">מסלולים בצפון</a></li>
+                        <li><a href="Center.html">מסלולים במרכז</a></li>
+                        <li><a href="South.html">מסלולים בדרום</a></li>
+                    </ul>
+                </div>
+
+                <div class="siteMapGroup">
+                    <h3>🍃 מסלולים לפי עונות השנה</h3>
+                    <ul>
+                        <li><a href="#" onclick="return false">מסלולים לקיץ</a></li>
+                        <li><a href="#" onclick="return false">מסלולים לחורף</a></li>
+                        <li><a href="#" onclick="return false">מסלולים לאביב</a></li>
+                        <li><a href="#" onclick="return false">מסלולים לסתיו</a></li>
+                    </ul>
+                </div>
+
+                <div class="siteMapGroup">
+                    <h3>👥 אודות</h3>
+                    <ul>
+                        <li><a href="aboutUs.html">קצת אלינו</a></li>
+                        <li><a href="siteMap.html">מפת האתר</a></li>
+                    </ul>
+                </div>
+
+                <div class="siteMapGroup">
+                    <h3>✉️ יצירת קשר</h3>
+                    <ul>
+                        <li><a href="#" onclick="return false">צרו קשר</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <p id="siteMapNote">
+                מפת האתר כוללת גם עמודים רלוונטיים שעדיין לא פותחו במלואם.
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <p>קצת אוויר | סוגרים את המסך ויוצאים לדרך</p>
+        <a href="#top">חזרה לראש הדף</a>
+    </footer>
+
+</div>
+
+</body>
+</html>
+
