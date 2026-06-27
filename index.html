@@ -11,7 +11,7 @@
     <link rel="icon" type="image/png" href="images/nature-icon.png" />
 
     <link href="styles/myStyle.css" rel="stylesheet" />
-    <script src="jScripts/JavaScript.js"></script>
+    <script src="scripts/app.js"></script>
 </head>
 
 <body>
@@ -28,7 +28,7 @@
 
             <nav>
                 <ul>
-                    <li><a href="main.html">🏠 דף הבית</a></li>
+                    <li><a href="index.html">🏠 דף הבית</a></li>
 
                     <li>
                         <a href="#">📍 מסלולים לפי איזורים</a>
@@ -130,12 +130,18 @@
 
             <div id="trailFinderBox">
                 <div id="trailChoiceArea">
+                    <div class="trailTextBox">
+                        <h3>איך לקרוא לכם?</h3>
+                        <label for="travelerName">הקלידו שם או כינוי:</label>
+                        <input type="text" id="travelerName" onkeyup="writeTravelerName()" onchange="writeTravelerName()" />
+                    </div>
+
                     <div class="trailQuestionBox">
                         <h3>באיזה אזור תרצו לטייל?</h3>
-                        <label><input type="radio" id="areaNorth" name="trailArea" onclick="chooseArea('בצפון', 'mapNorth')" /> צפון</label>
-                        <label><input type="radio" id="areaCenter" name="trailArea" onclick="chooseArea('במרכז', 'mapCenter')" /> מרכז</label>
-                        <label><input type="radio" id="areaSouth" name="trailArea" onclick="chooseArea('בדרום', 'mapSouth')" /> דרום</label>
-                        <label><input type="radio" id="areaAny" name="trailArea" onclick="chooseArea('באזור שמתאים לכם', 'mapGeneral')" /> לא משנה לי</label>
+                        <label><input type="checkbox" id="areaNorth" onclick="chooseAreaBox('צפון', 0)" /> צפון</label>
+                        <label><input type="checkbox" id="areaCenter" onclick="chooseAreaBox('מרכז', 1)" /> מרכז</label>
+                        <label><input type="checkbox" id="areaSouth" onclick="chooseAreaBox('דרום', 2)" /> דרום</label>
+                        <label><input type="checkbox" id="areaAny" onclick="chooseAreaBox('לא משנה לי', 3)" /> לא משנה לי</label>
                     </div>
 
                     <div class="trailQuestionBox">
@@ -156,11 +162,10 @@
 
                     <div class="trailQuestionBox">
                         <h3>איזה סוג טבע אתם מעדיפים?</h3>
-                        <label><input type="radio" id="natureWater" name="trailNature" onclick="chooseNature('עם מים', 'water', '💧 מים')" /> מים</label>
-                        <label><input type="radio" id="natureForest" name="trailNature" onclick="chooseNature('עם יער וצל', 'forest', '🌳 יער וצל')" /> יער וצל</label>
-                        <label><input type="radio" id="natureView" name="trailNature" onclick="chooseNature('עם תצפית ונוף', 'view', '🏞️ נוף')" /> תצפית ונוף</label>
-                        <label><input type="radio" id="natureDesert" name="trailNature" onclick="chooseNature('עם מדבר ושקט', 'desert', '🌵 מדבר')" /> מדבר ושקט</label>
-                        <label><input type="radio" id="natureAny" name="trailNature" onclick="chooseNature('עם טבע נעים ומרגיע', 'any', '🌿 טבע')" /> לא משנה לי</label>
+                        <label><input type="checkbox" id="natureWater" onclick="chooseNatureBox('מים', 'water', '💧 מים', 0)" /> מים</label>
+                        <label><input type="checkbox" id="natureForest" onclick="chooseNatureBox('יער וצל', 'forest', '🌳 יער וצל', 1)" /> יער וצל</label>
+                        <label><input type="checkbox" id="natureView" onclick="chooseNatureBox('תצפית ונוף', 'view', '🏞️ נוף', 2)" /> תצפית ונוף</label>
+                        <label><input type="checkbox" id="natureDesert" onclick="chooseNatureBox('מדבר ושקט', 'desert', '🌵 מדבר', 3)" /> מדבר ושקט</label>
                     </div>
 
                     <div class="trailQuestionBox">
@@ -179,7 +184,12 @@
                         <label><input type="radio" id="seasonAutumn" name="trailSeason" onclick="chooseSeason('בסתיו', 'autumn', '🍂 סתיו')" /> סתיו</label>
                     </div>
 
-                    <input id="findTrailButton" type="button" value="מצא לי מסלול" onclick="findTrail()" />
+                    <div class="trailNotesBox">
+                        <label for="trailNotes">הערות נוספות לפני שליחה:</label>
+                        <textarea id="trailNotes" onkeyup="writeTrailNotes()" onchange="writeTrailNotes()"></textarea>
+                    </div>
+
+                    <input id="findTrailButton" type="button" value="מצא לי מסלול" onclick="findTrail()" disabled />
                 </div>
 
                 <div id="trailResultArea">
@@ -189,8 +199,11 @@
                         <div id="timeInfo" class="trailInfoBox topRightInfo" hidden></div>
                         <img id="mapGeneral" src="images/israel-map.png" alt="מפת ישראל" />
                         <img id="mapNorth" src="images/NorthMapFixed.png" alt="מפת צפון" hidden />
-                        <img id="mapCenter" src="images/CenterMapFixed.png" alt="מפת מרכז" hidden />
+                        <img id="mapCenter" src="images/center-map-fixed.png" alt="מפת מרכז" hidden />
                         <img id="mapSouth" src="images/SouthMapFixed.png" alt="מפת דרום" hidden />
+                        <img id="mapNorthCenter" src="images/center-north-map-fixed.png" alt="מפת צפון ומרכז" hidden />
+                        <img id="mapNorthSouth" src="images/north-south-map-fixed.png" alt="מפת צפון ודרום" hidden />
+                        <img id="mapCenterSouth" src="images/center-south-map-fixed.png" alt="מפת מרכז ודרום" hidden />
                         <div id="natureInfo" class="trailInfoBox bottomLeftInfo" hidden></div>
                         <div id="withInfo" class="trailInfoBox bottomRightInfo" hidden></div>
                         <p id="trailResult" hidden></p>
@@ -264,4 +277,5 @@
 
 </body>
 </html>
+
 
