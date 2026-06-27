@@ -1,4 +1,4 @@
-﻿let tipIndex = 0;
+let tipIndex = 0;
 
 let tips = [
     "צאו להליכה של 20 דקות בלי אוזניות ובלי גלילה בטלפון.",
@@ -18,9 +18,16 @@ function showTip() {
     }
 }
 
+let travelerName = "";
+let trailNotes = "";
 let chosenArea = "", chosenMap = "mapGeneral", chosenTime = "", chosenWith = "";
 let chosenNature = "", chosenNatureType = "", chosenEffort = "", chosenSeason = "", chosenSeasonType = "";
-let maps = ["mapGeneral", "mapNorth", "mapCenter", "mapSouth"];
+let maps = ["mapGeneral", "mapNorth", "mapCenter", "mapSouth", "mapNorthCenter", "mapNorthSouth", "mapCenterSouth"];
+let areaChoices = ["", "", "", ""];
+let areaMapChoices = ["mapNorth", "mapCenter", "mapSouth", "mapGeneral"];
+let natureChoices = ["", "", "", ""];
+let natureTypes = ["", "", "", ""];
+let natureLabels = ["", "", "", ""];
 
 function showTrailMap(map) {
     for (let i = 0; i < maps.length; i++) {
@@ -35,51 +42,169 @@ function putInfo(id, text) {
     document.getElementById(id).hidden = false;
 }
 
-function chooseArea(area, map) {
-    chosenArea = area;
-    chosenMap = map;
-    showTrailMap(map);
+function hideInfo(id) {
+    document.getElementById(id).hidden = true;
+}
+
+function writeTravelerName() {
+    travelerName = document.getElementById("travelerName").value;
+    checkTrailReady();
+}
+
+function writeTrailNotes() {
+    trailNotes = document.getElementById("trailNotes").value;
+}
+
+function joinChoices(list) {
+    let text = "";
+
+    for (let i = 0; i < list.length; i++) {
+        if (list[i] != "") {
+            if (text != "") {
+                text = text + ", ";
+            }
+            text = text + list[i];
+        }
+    }
+
+    return text;
+}
+
+function countChoices(list) {
+    let total = 0;
+
+    for (let i = 0; i < list.length; i++) {
+        if (list[i] != "") {
+            total = total + 1;
+        }
+    }
+
+    return total;
+}
+
+function hasChoice(list, word) {
+    let found = false;
+
+    for (let i = 0; i < list.length; i++) {
+        if (list[i] == word) {
+            found = true;
+        }
+    }
+
+    return found;
+}
+
+function checkTrailReady() {
+    if (travelerName != "" && chosenArea != "" && chosenTime != "" && chosenWith != "" && chosenNature != "" && chosenEffort != "" && chosenSeason != "") {
+        document.getElementById("findTrailButton").disabled = false;
+    }
+    else {
+        document.getElementById("findTrailButton").disabled = true;
+    }
+}
+
+function chooseAreaMap() {
+    let total = countChoices(areaChoices);
+
+    if (total == 1) {
+        for (let i = 0; i < areaChoices.length; i++) {
+            if (areaChoices[i] != "") {
+                chosenMap = areaMapChoices[i];
+            }
+        }
+    }
+    else {
+        chosenMap = "mapGeneral";
+    }
+
+    if (areaChoices[0] != "" && areaChoices[1] != "" && areaChoices[2] == "" && areaChoices[3] == "") {
+        chosenMap = "mapNorthCenter";
+    }
+    if (areaChoices[0] != "" && areaChoices[2] != "" && areaChoices[1] == "" && areaChoices[3] == "") {
+        chosenMap = "mapNorthSouth";
+    }
+    if (areaChoices[1] != "" && areaChoices[2] != "" && areaChoices[0] == "" && areaChoices[3] == "") {
+        chosenMap = "mapCenterSouth";
+    }
+}
+
+function chooseAreaBox(area, place) {
+    if (areaChoices[place] == "") {
+        areaChoices[place] = area;
+    }
+    else {
+        areaChoices[place] = "";
+    }
+
+    chosenArea = joinChoices(areaChoices);
+    chooseAreaMap();
+
+    showTrailMap(chosenMap);
+    checkTrailReady();
 }
 
 function chooseTime(time, text) {
     chosenTime = time;
     putInfo("timeInfo", text);
+    checkTrailReady();
 }
 
 function chooseWith(tripWith, text) {
     chosenWith = tripWith;
     putInfo("withInfo", text);
+    checkTrailReady();
 }
 
-function chooseNature(nature, type, text) {
-    chosenNature = nature;
-    chosenNatureType = type;
-    putInfo("natureInfo", text);
+function chooseNatureBox(nature, type, text, place) {
+    if (natureChoices[place] == "") {
+        natureChoices[place] = nature;
+        natureTypes[place] = type;
+        natureLabels[place] = text;
+    }
+    else {
+        natureChoices[place] = "";
+        natureTypes[place] = "";
+        natureLabels[place] = "";
+    }
+
+    chosenNature = joinChoices(natureChoices);
+    chosenNatureType = joinChoices(natureTypes);
+
+    if (chosenNature == "") {
+        hideInfo("natureInfo");
+    }
+    else {
+        putInfo("natureInfo", joinChoices(natureLabels));
+    }
+
+    checkTrailReady();
 }
 
 function chooseEffort(effort) {
     chosenEffort = effort;
+    checkTrailReady();
 }
 
 function chooseSeason(season, type, text) {
     chosenSeason = season;
     chosenSeasonType = type;
     putInfo("seasonInfo", text);
+    checkTrailReady();
 }
 
 function getTrailTip() {
     let tip = "כדאי לבחור מסלול קרוב ונוח שמאפשר לכם לצאת בלי יותר מדי תכנון.";
 
-    if (chosenNatureType == "water") {
+    if (hasChoice(natureTypes, "water")) {
         tip = "כדאי להתחיל ממסלול נחל קצר, מעיין נגיש או מקום עם מים שאפשר לעצור בו.";
     }
-    if (chosenNatureType == "forest") {
+    if (hasChoice(natureTypes, "forest")) {
         tip = "כדאי לבחור חורשה, יער מוצל או פארק טבע עם שביל הליכה רגוע.";
     }
-    if (chosenNatureType == "view") {
+    if (hasChoice(natureTypes, "view")) {
         tip = "כדאי לחפש תצפית יפה, שביל נוף או מסלול עם נקודת עצירה לתמונה.";
     }
-    if (chosenNatureType == "desert") {
+    if (hasChoice(natureTypes, "desert")) {
         tip = "כדאי לבחור מסלול פתוח ושקט, במיוחד בשעות נעימות ולא חמות מדי.";
     }
 
@@ -106,13 +231,20 @@ function findTrail() {
         document.getElementById("trailResult").hidden = false;
     }
     else {
-        let trailText = "סיכום הבחירות שלכם<br>" +
+        let notesText = trailNotes;
+
+        if (notesText == "") {
+            notesText = "אין";
+        }
+
+        let trailText = "סיכום הבחירות של " + travelerName + "<br>" +
             "אזור: " + chosenArea + "<br>" +
             "זמן: " + chosenTime + "<br>" +
             "עם מי: " + chosenWith + "<br>" +
             "סוג טבע: " + chosenNature + "<br>" +
             "מאמץ: " + chosenEffort + "<br>" +
-            "עונה: " + chosenSeason + "<br><br>" +
+            "עונה: " + chosenSeason + "<br>" +
+            "הערות: " + notesText + "<br><br>" +
             "המלצה קצרה: " + getTrailTip();
 
         document.getElementById("trailResult").innerHTML = trailText;
