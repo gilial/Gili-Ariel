@@ -478,7 +478,6 @@ p {
 
 #trailMapBox img {
     height: 470px;
-    max-width: 56%;
     margin-top: 0;
     opacity: 0.88;
 }
@@ -616,7 +615,6 @@ p {
 
     #trailMapBox img {
         height: 430px;
-        max-width: 54%;
     }
 
     .trailInfoBox {
@@ -647,7 +645,6 @@ p {
 
     #trailMapBox img {
         height: 390px;
-        max-width: 50%;
     }
 
     .trailInfoBox {
