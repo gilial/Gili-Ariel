@@ -59,7 +59,7 @@ header {
     margin: 0 auto 2px auto;
 }
 
-#topBar nav {
+nav {
     display: inline-block;
     width: 84%;
     vertical-align: top;
@@ -68,14 +68,14 @@ header {
     text-align: center;
 }
 
-#topBar nav ul {
+nav ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
     font-size: 0;
 }
 
-#topBar nav li {
+nav li {
     display: inline-block;
     width: 20%;
     margin: 0;
@@ -84,7 +84,7 @@ header {
     vertical-align: top;
 }
 
-#topBar nav a {
+nav a {
     display: block;
     width: 96%;
     height: 62px;
@@ -103,12 +103,12 @@ header {
     box-shadow: 0 3px 8px #e6ddcc;
 }
 
-#topBar nav a:hover {
+nav a:hover {
     background-color: #b9b68e;
     color: white;
 }
 
-#topBar .dropDown {
+.dropDown {
     visibility: hidden;
     position: absolute;
     top: 62px;
@@ -121,12 +121,12 @@ header {
     box-shadow: 0 5px 12px #d8e6d0;
 }
 
-#topBar .dropDown li {
+.dropDown li {
     display: block;
     width: 100%;
 }
 
-#topBar .dropDown a {
+.dropDown a {
     width: 100%;
     background-color: #fffaf2;
     color: #3b2d24;
@@ -139,11 +139,11 @@ header {
     font-size: 14px;
 }
 
-#topBar nav li:hover .dropDown {
+nav li:hover .dropDown {
     visibility: visible;
 }
 
-#topBar .dropDown a:hover {
+.dropDown a:hover {
     background-color: #8e8b5f;
     color: white;
 }
@@ -468,11 +468,8 @@ p {
 }
 
 .trailTextBox,
-.trailNotesBox {
-    display: block;
-    width: 96%;
-    margin: 0 1% 10px 1%;
-    padding: 0 10px 10px 10px;
+.trailNotesBox,
+.trailQuestionBox {
     background-color: #fffdf5;
     border: 1px solid #d8e6d0;
     border-radius: 14px;
@@ -480,7 +477,16 @@ p {
     box-sizing: border-box;
 }
 
-.trailTextBox h3 {
+.trailTextBox,
+.trailNotesBox {
+    display: block;
+    width: 96%;
+    margin: 0 1% 10px 1%;
+    padding: 0 10px 10px 10px;
+}
+
+.trailTextBox h3,
+.trailQuestionBox h3 {
     margin: 0 -10px 8px -10px;
     padding: 8px 10px;
     background-color: #1f4d36;
@@ -508,6 +514,7 @@ p {
     font-family: "Segoe UI", Arial, sans-serif;
 }
 
+/* המלבן שבתוכו נמצאת המפה והסיכום */
 #trailMapBox {
     position: relative;
     width: 88%;
@@ -517,12 +524,85 @@ p {
     overflow: hidden;
 }
 
-#trailMapBox img {
+/* הקופסה שמחזיקה את שלושת חלקי המפה */
+#mapPartsBox {
+    position: relative;
     width: 270px;
-    margin-top: 120px;
-    opacity: 0.88;
+    height: 410px;
+    margin: 70px auto 0 auto;
 }
 
+/* כל חלק של המפה מקבל מיקום חופשי בתוך הקופסה */
+.mapPart {
+    position: absolute;
+    margin: 0;
+}
+
+/* מצב התחלתי: חלקי המפה שקופים */
+.dimPart {
+    opacity: 0.5;
+}
+
+/* מצב אחרי בחירה: החלק הנבחר מלא */
+.fullPart {
+    opacity: 1;
+}
+
+.northPart {
+    /* כאן מזיזים את חלק הצפון: top למעלה/למטה, left ימינה/שמאלה */
+    width: 118px;
+    top: 3%;
+    left: 40%;
+}
+
+.centerPart {
+    /* כאן מזיזים את חלק המרכז: top למעלה/למטה, left ימינה/שמאלה */
+    width: 132px;
+    top: 30.4%;
+    left: 24%;
+}
+
+.southPart {
+    /* כאן מזיזים את חלק הדרום: top למעלה/למטה, left ימינה/שמאלה */
+    width: 114px;
+    top: 56.65%;
+    left: 24.7%;
+}
+
+/* סולם הקושי של הטיול */
+#effortScaleBox {
+    position: absolute;
+    width: 118px;
+    top: 25%;
+    left: -10%;
+}
+
+/* כל שורה בסולם הקושי */
+.effortLine {
+    position: relative;
+    width: 50%;
+    height: 30px;
+    margin-bottom: 20%;
+    left: 15%;
+    
+}
+
+/* תמונת המלבן הצבעוני */
+.effortBar {
+    width: 170%;
+    
+    
+}
+
+/* החץ שמופיע על הצבע שנבחר */
+.effortArrow {
+    position: absolute;
+    width: 100%;
+    top: 40%;
+    left: 80%;
+}
+
+/* התיבות הקטנות שמופיעות מסביב למפה */
 .trailInfoBox {
     position: absolute;
     width: 138px;
@@ -539,26 +619,31 @@ p {
     box-sizing: border-box;
 }
 
+/* מיקום התיבה של העונה */
 .topLeftInfo {
     top: 20px;
     left: 0;
 }
 
+/* מיקום התיבה של הזמן */
 .topRightInfo {
     top: 20px;
     right: 0;
 }
 
+/* מיקום התיבה של סוג הטבע */
 .bottomLeftInfo {
     bottom: 72px;
     left: 0;
 }
 
+/* מיקום התיבה של עם מי יוצאים */
 .bottomRightInfo {
     bottom: 72px;
     right: 0;
 }
 
+/* תיבת הסיכום שמופיעה אחרי לחיצה על הכפתור */
 #trailResult {
     position: absolute;
     width: 82%;
@@ -582,28 +667,14 @@ p {
     width: 47%;
     height: 122px;
     vertical-align: top;
-    background-color: #fffdf5;
-    border: 1px solid #d8e6d0;
-    border-radius: 14px;
     margin: 0 1% 10px 1%;
     padding: 0 10px 10px 10px;
-    box-shadow: 0 3px 9px #e6ddcc;
-    box-sizing: border-box;
 }
 
 .trailNotesBox textarea {
-    width: 850px;
-    height: 130px;
+    width: 100%;
+    height: 150%;
     vertical-align: top;
-}
-
-.trailQuestionBox h3 {
-    margin: 0 -10px 8px -10px;
-    padding: 8px 10px;
-    background-color: #1f4d36;
-    color: #fffdf5;
-    border-radius: 14px 14px 0 0;
-    font-size: 16px;
 }
 
 .trailQuestionBox label {
@@ -665,9 +736,13 @@ p {
         margin: 8px 4% 0 4%;
     }
 
-    #trailMapBox img {
-        width: 245px;
-        margin-top: 118px;
+    #mapPartsBox {
+        margin-top: 62px;
+    }
+
+    #effortScaleBox {
+        top: 145px;
+        left: 4px;
     }
 
     .trailInfoBox {
@@ -696,9 +771,30 @@ p {
         height: 650px;
     }
 
-    #trailMapBox img {
-        width: 215px;
-        margin-top: 110px;
+    #mapPartsBox {
+        margin-top: 60px;
+        width: 240px;
+    }
+
+    #effortScaleBox {
+        width: 100px;
+        top: 142px;
+        left: 2px;
+    }
+
+    .effortLine {
+        width: 100px;
+        height: 28px;
+        margin-bottom: 8px;
+    }
+
+    .effortBar {
+        width: 92px;
+    }
+
+    .effortArrow {
+        width: 22px;
+        left: 35px;
     }
 
     .trailInfoBox {
@@ -851,6 +947,114 @@ td {
 #hitLogoBox img {
     width: 320px;
     height: auto;
+}
+
+#contactPage {
+    width: 82%;
+    padding: 34px 4%;
+}
+
+#contactIntro {
+    width: 76%;
+    margin: 0 auto 24px auto;
+    padding: 18px;
+    background-color: #f4f4e7;
+    border: 1px solid #d6d2b8;
+    border-radius: 14px;
+    box-sizing: border-box;
+}
+
+#contactIntro p {
+    margin: 0;
+    font-size: 18px;
+    line-height: 170%;
+}
+
+#contactForm {
+    width: 62%;
+    margin: 0 auto;
+    padding: 26px;
+    background-color: #fffdf5;
+    border: 1px solid #d8e6d0;
+    border-radius: 18px;
+    box-shadow: 0 4px 12px #e6ddcc;
+    box-sizing: border-box;
+    text-align: right;
+}
+
+.contactField {
+    margin-bottom: 16px;
+}
+
+.contactField label {
+    display: inline-block;
+    width: 26%;
+    font-size: 17px;
+    font-weight: bold;
+    color: #1f4d36;
+    vertical-align: top;
+}
+
+.contactField input,
+.contactField select,
+.contactField textarea {
+    width: 68%;
+    border: 1px solid #2f6b3f;
+    border-radius: 8px;
+    padding: 7px;
+    font-size: 16px;
+    font-family: "Segoe UI", Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+.contactField input,
+.contactField select {
+    height: 38px;
+}
+
+.contactField textarea {
+    height: 140px;
+    vertical-align: top;
+}
+
+.contactAreaOptions {
+    display: inline-block;
+    width: 68%;
+}
+
+.contactAreaOptions input {
+    width: auto;
+    height: auto;
+    margin-right: 12px;
+}
+
+.contactAreaOptions label {
+    width: auto;
+    margin-left: 14px;
+    font-weight: normal;
+    color: #243326;
+}
+
+#contactButtons {
+    text-align: center;
+    margin-top: 18px;
+}
+
+#contactButtons input {
+    width: 130px;
+    height: 42px;
+    margin: 0 6px;
+    background-color: #385b3b;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 0 3px 7px #ddd4bd;
+}
+
+#contactButtons input:hover {
+    background-color: #263f29;
 }
 
 #siteMapPage {
@@ -1119,6 +1323,69 @@ td {
     text-align: center;
 }
 
+.breadiv {
+    width: 100%;
+    background-color: #fffdf5;
+    padding: 8px 0;
+}
+
+.breadcrumbs {
+    width: 86%;
+    margin-right: 4%;
+    text-align: right;
+}
+
+.breadcrumbs ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    font-size: 15px;
+}
+
+.breadcrumbs li {
+    display: inline-block;
+    width: auto;
+    margin: 0;
+    padding: 0;
+    position: static;
+    font-size: 15px;
+    color: #1f4d36;
+}
+
+.breadcrumbs li:after {
+    content: ">";
+    margin: 0 6px;
+    color: #243326;
+}
+
+.breadcrumbs li:last-child:after {
+    content: "";
+    margin: 0;
+}
+
+.breadcrumbs a {
+    display: inline;
+    width: auto;
+    height: auto;
+    line-height: normal;
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+    color: #1f4d36;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: normal;
+}
+
+.breadcrumbs a:hover {
+    background-color: transparent;
+    color: #1f4d36;
+    text-decoration: underline;
+}
+
 footer {
     background-color: #1f4d36;
     color: white;
@@ -1134,124 +1401,4 @@ footer p {
 footer a {
     color: #f6f2e9;
     font-weight: bold;
-}
-
-.breadcrumbs {
-    background-color: white;
-    width: 86%;
-    margin-right: 4%;
-    margin-top: 10px;
-    display: block;
-    
-}
-
-.breadcrumbs>ul {
-    display: flex;
-    gap: 5px;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.breadcrumbs>ul>li:not(:last-child)::after {
-    content: ">";
-    margin-left: 5px;
-}
-
-.breadcrumbs>ul>li:first-child > a {
-    color: #1f4d36;
-    text-decoration: none;
-}
-
-.breadcrumbs>ul>li:last-child > a {
-    color: #2f6b3f;
-    text-decoration: none;
-}
-
-/* המלבן שבתוכו נמצאת המפה והסיכום */
-#trailMapBox {
-    position: relative;
-    width: 88%;
-    height: 560px;
-    margin: 10px 6% 0 6%;
-    text-align: center;
-    overflow: hidden;
-}
-
-/* הקופסה שמחזיקה את שלושת חלקי המפה */
-#mapPartsBox {
-    position: relative;
-    width: 270px;
-    height: 410px;
-    margin: 70px auto 0 auto;
-}
-
-/* כל חלק של המפה מקבל מיקום חופשי בתוך הקופסה */
-.mapPart {
-    position: absolute;
-    margin: 0;
-}
-
-/* מצב התחלתי: חלקי המפה שקופים */
-.dimPart {
-    opacity: 0.5;
-}
-
-/* מצב אחרי בחירה: החלק הנבחר מלא */
-.fullPart {
-    opacity: 1;
-}
-
-.northPart {
-    /* כאן מזיזים את חלק הצפון: top למעלה/למטה, left ימינה/שמאלה */
-    width: 118px;
-    top: 3%;
-    left: 40%;
-}
-
-.centerPart {
-    /* כאן מזיזים את חלק המרכז: top למעלה/למטה, left ימינה/שמאלה */
-    width: 132px;
-    top: 30.4%;
-    left: 24%;
-}
-
-.southPart {
-    /* כאן מזיזים את חלק הדרום: top למעלה/למטה, left ימינה/שמאלה */
-    width: 114px;
-    top: 56.65%;
-    left: 24.7%;
-}
-
-/* סולם הקושי של הטיול */
-#effortScaleBox {
-    position: absolute;
-    width: 118px;
-    top: 25%;
-    left: -10%;
-}
-
-/* כל שורה בסולם הקושי */
-.effortLine {
-    position: relative;
-    width: 50%;
-    height: 30px;
-    margin-bottom: 20%;
-    left: 15%;
-    
-}
-
-/* תמונת המלבן הצבעוני */
-.effortBar {
-    width: 170%;
-    
-    
-}
-
-/* החץ שמופיע על הצבע שנבחר */
-.effortArrow {
-    position: absolute;
-    width: 100%;
-    top: 40%;
-    left: 80%;
 }
