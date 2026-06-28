@@ -1,11 +1,11 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="he">
 <head>
     <meta charset="utf-8" />
-    <title>מסלולים בצפון - קצת אוויר</title>
-    <meta name="description" content="מסלול טיול בצפון באתר קצת אוויר" />
-    <meta name="keywords" content="טיולים, צפון, נחל מיצר, מפל מיצר, קצת אוויר" />
-    <meta name="author" content="אריאל פריידלין,גילי אלוני" />
+    <title>צרו קשר - קצת אוויר</title>
+    <meta name="description" content="עמוד יצירת קשר באתר קצת אוויר" />
+    <meta name="keywords" content="צור קשר, טיולים, מסלולים, קצת אוויר" />
+    <meta name="author" content="אריאל פריידלין, גילי אלוני" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
     <link rel="icon" type="image/png" href="images/nature-icon.png" />
@@ -50,51 +50,82 @@
                         <a href="#">👥 אודות</a>
                         <ul class="dropDown">
                             <li><a href="siteMap.html">🗺️ מפת האתר</a></li>
-                            <li><a href="about.html">🌿 קצת עלינו</a></li>
+                            <li><a href="aboutUs.html">🌿 קצת אלינו</a></li>
                         </ul>
                     </li>
 
-                    <li><a href="contactUs.html">✉️ צרו קשר</a></li>
+                    <li><a href="ContactUs.html">✉️ צרו קשר</a></li>
                 </ul>
             </nav>
         </div>
-
     </header>
 
     <main>
-        <section class="contentHero">
-            <h1>טופס צור קשר</h1>
-        </section>
-
         <div class="breadiv">
             <nav aria-label="breadcrumbs" class="breadcrumbs">
                 <ul>
                     <li><a href="index.html">עמוד הבית</a></li>
-                    <li><a href="contactUs.html">צרו קשר</a></li>
+                    <li><a href="ContactUs.html">צרו קשר</a></li>
                 </ul>
             </nav>
         </div>
-        
-        <p>מלאו את הטופס הבא על מנת להוסיף מסלול חדש לאתר</p>
-        <form>
-            <label for="name">שם מלא</label>
-            <input type="text" id="name"><br>
-            <label for="email">כתובת מייל</label>
-            <input type="email" id="email"><br>
-            <label>באיזה אזור בארץ המסלול?</label>
-            <input type="checkbox" id="north">
-            <label for="north" > צפון</label>
-            <input type="checkbox" id="south" >
-            <label for="south"> דרום</label>
-            <input type="checkbox" id="center">
-            <label for="center"> מרכז</label><br>
-            <label for="tellUs">ספרו לנו קצת על המסלול</label>
-            <input type="text" id="tellUs"><br>
-            <label for="img">העלאת תמונה של המסלול</label>
-            <input type="file" id="img"><br>
-            <input type="button" value="לחץ כאן לשליחה" id="formButton">
-        </form>
-        
+
+        <section id="contactPage" class="contentSection">
+            <h2>צרו קשר</h2>
+
+            <div id="contactIntro">
+                <p>מלאו את הטופס הבא על מנת להוסיף מסלול חדש לאתר</p>
+            </div>
+
+            <form id="contactForm">
+                <div class="contactField">
+                    <label for="fullName">שם מלא:</label>
+                    <input type="text" id="fullName" name="fullName" />
+                </div>
+
+                <div class="contactField">
+                    <label for="emailAddress">כתובת מייל:</label>
+                    <input type="text" id="emailAddress" name="emailAddress" />
+                </div>
+
+                <div class="contactField">
+                    <label>באיזה אזור בארץ המסלול?</label>
+
+                    <div class="contactAreaOptions">
+                        <input type="checkbox" id="northArea" name="northArea" />
+                        <label for="northArea">צפון</label>
+
+                        <input type="checkbox" id="southArea" name="southArea" />
+                        <label for="southArea">דרום</label>
+
+                        <input type="checkbox" id="centerArea" name="centerArea" />
+                        <label for="centerArea">מרכז</label>
+                    </div>
+                </div>
+
+                <div class="contactField">
+                    <label for="trailText">ספרו לנו קצת על המסלול:</label>
+                    <textarea id="trailText" name="trailText"></textarea>
+                </div>
+
+                <div class="contactField">
+                    <label for="trailImage">העלאת תמונה של המסלול:</label>
+                    <input type="file" id="trailImage" name="trailImage" />
+                </div>
+
+                <div id="contactButtons">
+                    <input type="button" value="לחץ כאן לשליחה" id="formButton" />
+                </div>
+            </form>
+        </section>
     </main>
+
+    <footer>
+        <p>קצת אוויר | סוגרים את המסך ויוצאים לדרך</p>
+        <a href="#top">חזרה לראש הדף</a>
+    </footer>
+
 </div>
+
 </body>
+</html>
