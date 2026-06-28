@@ -64,7 +64,7 @@
 
     </header>
 
-    <main>
+   <main>
 
         <section id="homeIntro">
 
@@ -130,12 +130,14 @@
 
             <div id="trailFinderBox">
                 <div id="trailChoiceArea">
+                    <!-- תיבת טקסט לשם המשתמש -->
                     <div class="trailTextBox">
                         <h3>איך לקרוא לכם?</h3>
                         <label for="travelerName">הקלידו שם או כינוי:</label>
                         <input type="text" id="travelerName" onkeyup="writeTravelerName()" onchange="writeTravelerName()" />
                     </div>
 
+                    <!-- בחירת אזורים בארץ - אפשר לסמן כמה אזורים -->
                     <div class="trailQuestionBox">
                         <h3>באיזה אזור תרצו לטייל?</h3>
                         <label><input type="checkbox" id="areaNorth" onclick="chooseAreaBox('צפון', 0)" /> צפון</label>
@@ -144,6 +146,7 @@
                         <label><input type="checkbox" id="areaAny" onclick="chooseAreaBox('לא משנה לי', 3)" /> לא משנה לי</label>
                     </div>
 
+                    <!-- שאלות רדיו - בכל שאלה אפשר לבחור תשובה אחת -->
                     <div class="trailQuestionBox">
                         <h3>כמה זמן יש לכם?</h3>
                         <label><input type="radio" id="timeShort" name="trailTime" onclick="chooseTime('לזמן קצר', '⏱️ עד שעה')" /> עד שעה</label>
@@ -160,20 +163,21 @@
                         <label><input type="radio" id="whoKids" name="trailWith" onclick="chooseWith('לטיול עם ילדים', '🧒 ילדים')" /> עם ילדים</label>
                     </div>
 
+                    <!-- סוג טבע - בחירת רדיו אחת שמשפיעה על ההמלצה -->
                     <div class="trailQuestionBox">
                         <h3>איזה סוג טבע אתם מעדיפים?</h3>
-                        <label><input type="checkbox" id="natureWater" onclick="chooseNatureBox('מים', 'water', '💧 מים', 0)" /> מים</label>
-                        <label><input type="checkbox" id="natureForest" onclick="chooseNatureBox('יער וצל', 'forest', '🌳 יער וצל', 1)" /> יער וצל</label>
-                        <label><input type="checkbox" id="natureView" onclick="chooseNatureBox('תצפית ונוף', 'view', '🏞️ נוף', 2)" /> תצפית ונוף</label>
-                        <label><input type="checkbox" id="natureDesert" onclick="chooseNatureBox('מדבר ושקט', 'desert', '🌵 מדבר', 3)" /> מדבר ושקט</label>
+                        <label><input type="radio" id="natureWater" name="trailNature" onclick="chooseNature('מים', 'water', 0)" /> מים</label>
+                        <label><input type="radio" id="natureForest" name="trailNature" onclick="chooseNature('יער וצל', 'forest', 1)" /> יער וצל</label>
+                        <label><input type="radio" id="natureView" name="trailNature" onclick="chooseNature('תצפית ונוף', 'view', 2)" /> תצפית ונוף</label>
+                        <label><input type="radio" id="natureDesert" name="trailNature" onclick="chooseNature('מדבר ושקט', 'desert', 3)" /> מדבר ושקט</label>
                     </div>
 
                     <div class="trailQuestionBox">
                         <h3>כמה אתם רוצים להתאמץ?</h3>
-                        <label><input type="radio" id="effortAir" name="trailEffort" onclick="chooseEffort('קליל מאוד')" /> רק לנשום קצת אוויר</label>
-                        <label><input type="radio" id="effortEasy" name="trailEffort" onclick="chooseEffort('בהליכה קלה')" /> הליכה קלה</label>
-                        <label><input type="radio" id="effortMedium" name="trailEffort" onclick="chooseEffort('ברמת קושי בינונית')" /> מסלול בינוני</label>
-                        <label><input type="radio" id="effortHard" name="trailEffort" onclick="chooseEffort('מאתגר יותר')" /> תאתגרו אותי</label>
+                        <label><input type="radio" id="effortAir" name="trailEffort" onclick="chooseEffort('קליל מאוד', 0)" /> רק לנשום קצת אוויר</label>
+                        <label><input type="radio" id="effortEasy" name="trailEffort" onclick="chooseEffort('בהליכה קלה', 1)" /> הליכה קלה</label>
+                        <label><input type="radio" id="effortMedium" name="trailEffort" onclick="chooseEffort('ברמת קושי בינונית', 2)" /> מסלול בינוני</label>
+                        <label><input type="radio" id="effortHard" name="trailEffort" onclick="chooseEffort('מאתגר יותר', 3)" /> תאתגרו אותי</label>
                     </div>
 
                     <div class="trailQuestionBox">
@@ -184,26 +188,54 @@
                         <label><input type="radio" id="seasonAutumn" name="trailSeason" onclick="chooseSeason('בסתיו', 'autumn', '🍂 סתיו')" /> סתיו</label>
                     </div>
 
+                    <!-- הערות חופשיות לפני יצירת ההמלצה -->
                     <div class="trailNotesBox">
                         <label for="trailNotes">הערות נוספות לפני שליחה:</label>
                         <textarea id="trailNotes" onkeyup="writeTrailNotes()" onchange="writeTrailNotes()"></textarea>
                     </div>
 
+                    <!-- כפתור ההמלצה נפתח רק אחרי שממלאים את השדות הדרושים -->
                     <input id="findTrailButton" type="button" value="מצא לי מסלול" onclick="findTrail()" disabled />
                 </div>
 
+                <!-- אזור התוצאה: מפה, סימוני בחירה וסיכום הטיול -->
                 <div id="trailResultArea">
                     <h3>🌿 ההמלצה שלכם</h3>
                     <div id="trailMapBox">
                         <div id="seasonInfo" class="trailInfoBox topLeftInfo" hidden></div>
                         <div id="timeInfo" class="trailInfoBox topRightInfo" hidden></div>
-                        <img id="mapGeneral" src="images/israel-map.png" alt="מפת ישראל" />
-                        <img id="mapNorth" src="images/NorthMapFixed.png" alt="מפת צפון" hidden />
-                        <img id="mapCenter" src="images/center-map-fixed.png" alt="מפת מרכז" hidden />
-                        <img id="mapSouth" src="images/SouthMapFixed.png" alt="מפת דרום" hidden />
-                        <img id="mapNorthCenter" src="images/center-north-map-fixed.png" alt="מפת צפון ומרכז" hidden />
-                        <img id="mapNorthSouth" src="images/north-south-map-fixed.png" alt="מפת צפון ודרום" hidden />
-                        <img id="mapCenterSouth" src="images/center-south-map-fixed.png" alt="מפת מרכז ודרום" hidden />
+                        <!-- חלקי המפה: בהתחלה שקופים, וכשלוחצים על אזור החלק נדלק -->
+                        <div id="mapPartsBox">
+                            <img id="mapNorthDim" class="mapPart northPart dimPart" src="images/onlyNorth-removebg-preview.png" alt="צפון" />
+                            <img id="mapCenterDim" class="mapPart centerPart dimPart" src="images/onlyCenter-removebg-preview.png" alt="מרכז" />
+                            <img id="mapSouthDim" class="mapPart southPart dimPart" src="images/onlySouth-removebg-preview.png" alt="דרום" />
+                            <img id="mapNorthFull" class="mapPart northPart fullPart" src="images/onlyNorth-removebg-preview.png" alt="צפון" hidden />
+                            <img id="mapCenterFull" class="mapPart centerPart fullPart" src="images/onlyCenter-removebg-preview.png" alt="מרכז" hidden />
+                            <img id="mapSouthFull" class="mapPart southPart fullPart" src="images/onlySouth-removebg-preview.png" alt="דרום" hidden />
+                        </div>
+                        <!-- סולם קושי: החץ עובר לצבע שמתאים לרמת המאמץ שנבחרה -->
+                        <div id="effortScaleBox">
+                            <div class="effortLine">
+                                <img id="effortGreenDim" class="effortBar dimPart" src="images/5-removebg-preview (2).png" alt="קליל" />
+                                <img id="effortGreenFull" class="effortBar fullPart" src="images/5-removebg-preview (2).png" alt="קליל" hidden />
+                                <img id="effortArrowGreen" class="effortArrow" src="images/Arrow.png" alt="חץ" hidden />
+                            </div>
+                            <div class="effortLine">
+                                <img id="effortYellowDim" class="effortBar dimPart" src="images/6-removebg-preview.png" alt="קל" />
+                                <img id="effortYellowFull" class="effortBar fullPart" src="images/6-removebg-preview.png" alt="קל" hidden />
+                                <img id="effortArrowYellow" class="effortArrow" src="images/Arrow.png" alt="חץ" hidden />
+                            </div>
+                            <div class="effortLine">
+                                <img id="effortOrangeDim" class="effortBar dimPart" src="images/7-removebg-preview.png" alt="בינוני" />
+                                <img id="effortOrangeFull" class="effortBar fullPart" src="images/7-removebg-preview.png" alt="בינוני" hidden />
+                                <img id="effortArrowOrange" class="effortArrow" src="images/Arrow.png" alt="חץ" hidden />
+                            </div>
+                            <div class="effortLine">
+                                <img id="effortRedDim" class="effortBar dimPart" src="images/8-removebg-preview.png" alt="קשה" />
+                                <img id="effortRedFull" class="effortBar fullPart" src="images/8-removebg-preview.png" alt="קשה" hidden />
+                                <img id="effortArrowRed" class="effortArrow" src="images/Arrow.png" alt="חץ" hidden />
+                            </div>
+                        </div>
                         <div id="natureInfo" class="trailInfoBox bottomLeftInfo" hidden></div>
                         <div id="withInfo" class="trailInfoBox bottomRightInfo" hidden></div>
                         <p id="trailResult" hidden></p>
