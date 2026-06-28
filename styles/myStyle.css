@@ -1167,3 +1167,91 @@ footer a {
     color: #2f6b3f;
     text-decoration: none;
 }
+
+/* המלבן שבתוכו נמצאת המפה והסיכום */
+#trailMapBox {
+    position: relative;
+    width: 88%;
+    height: 560px;
+    margin: 10px 6% 0 6%;
+    text-align: center;
+    overflow: hidden;
+}
+
+/* הקופסה שמחזיקה את שלושת חלקי המפה */
+#mapPartsBox {
+    position: relative;
+    width: 270px;
+    height: 410px;
+    margin: 70px auto 0 auto;
+}
+
+/* כל חלק של המפה מקבל מיקום חופשי בתוך הקופסה */
+.mapPart {
+    position: absolute;
+    margin: 0;
+}
+
+/* מצב התחלתי: חלקי המפה שקופים */
+.dimPart {
+    opacity: 0.5;
+}
+
+/* מצב אחרי בחירה: החלק הנבחר מלא */
+.fullPart {
+    opacity: 1;
+}
+
+.northPart {
+    /* כאן מזיזים את חלק הצפון: top למעלה/למטה, left ימינה/שמאלה */
+    width: 118px;
+    top: 3%;
+    left: 40%;
+}
+
+.centerPart {
+    /* כאן מזיזים את חלק המרכז: top למעלה/למטה, left ימינה/שמאלה */
+    width: 132px;
+    top: 30.4%;
+    left: 24%;
+}
+
+.southPart {
+    /* כאן מזיזים את חלק הדרום: top למעלה/למטה, left ימינה/שמאלה */
+    width: 114px;
+    top: 56.65%;
+    left: 24.7%;
+}
+
+/* סולם הקושי של הטיול */
+#effortScaleBox {
+    position: absolute;
+    width: 118px;
+    top: 25%;
+    left: -10%;
+}
+
+/* כל שורה בסולם הקושי */
+.effortLine {
+    position: relative;
+    width: 50%;
+    height: 30px;
+    margin-bottom: 20%;
+    left: 15%;
+    
+}
+
+/* תמונת המלבן הצבעוני */
+.effortBar {
+    width: 170%;
+    
+    
+}
+
+/* החץ שמופיע על הצבע שנבחר */
+.effortArrow {
+    position: absolute;
+    width: 100%;
+    top: 40%;
+    left: 80%;
+}
