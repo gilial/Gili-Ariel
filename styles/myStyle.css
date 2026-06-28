@@ -161,8 +161,9 @@ nav li:hover .dropDown {
 }
 
 #natureImageSide {
-    display: block;
-    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-start;
     height: 560px;
     position: relative;
     text-align: left;
@@ -175,11 +176,13 @@ nav li:hover .dropDown {
 }
 
 #israelMap {
-    position: absolute;
+    position: relative;
     top: 18px;
-    right: 2%;
+    right: 0;
     height: 500px;
     width: auto;
+    flex-shrink: 0;
+    margin-right: 20px;
 }
 
 #introText {
