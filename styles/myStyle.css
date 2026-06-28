@@ -161,9 +161,8 @@ nav li:hover .dropDown {
 }
 
 #natureImageSide {
-    display: flex;
-    flex-direction: row-reverse;
-    align-items: flex-start;
+    display: block;
+    width: 100%;
     height: 560px;
     position: relative;
     text-align: left;
@@ -176,13 +175,11 @@ nav li:hover .dropDown {
 }
 
 #israelMap {
-    position: relative;
+    position: absolute;
     top: 18px;
-    right: 0;
+    right: 2%;
     height: 500px;
     width: auto;
-    flex-shrink: 0;
-    margin-right: 20px;
 }
 
 #introText {
@@ -238,7 +235,7 @@ nav li:hover .dropDown {
 #speechBubble:after {
     content: "";
     position: absolute;
-    bottom: -18px;
+    top: 100%;
     left: 65px;
     width: 0;
     height: 0;
@@ -490,7 +487,7 @@ p {
 
 .trailTextBox h3,
 .trailQuestionBox h3 {
-    margin: 0 -10px 8px -10px;
+    margin: 0 0 8px 0;
     padding: 8px 10px;
     background-color: #1f4d36;
     color: #fffdf5;
@@ -577,7 +574,7 @@ p {
     position: absolute;
     width: 118px;
     top: 25%;
-    left: -10%;
+    right: 80%;
 }
 
 /* כל שורה בסולם הקושי */
@@ -1129,7 +1126,7 @@ td {
 }
 
 .siteMapGroup h3 {
-    margin: 0 -14px 16px -14px;
+    margin: 0 0 16px 0;
     padding: 13px 10px;
     background-color: #1f4d36;
     color: #fffdf5;
@@ -1315,7 +1312,7 @@ td {
 
 .route-text .imageCredit {
     width: 62%;
-    margin: -18px auto 22px auto;
+    margin: 0 auto 22px auto;
     padding: 0;
     background-color: transparent;
     border: 0;
