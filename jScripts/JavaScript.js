@@ -13,48 +13,39 @@ function showTip() {
 
     tipIndex = tipIndex + 1;
 
-    if (tipIndex === tips.length) {
+    if (tipIndex == tips.length) {
         tipIndex = 0;
     }
 }
 
 let travelerName = "";
 let trailNotes = "";
-let chosenArea = "", chosenMap = "mapGeneral", chosenTime = "", chosenWith = "";
+let chosenArea = "", chosenTime = "", chosenWith = "";
 let chosenNature = "", chosenNatureType = "", chosenEffort = "", chosenSeason = "", chosenSeasonType = "";
-let maps = ["mapGeneral", "mapNorth", "mapCenter", "mapSouth", "mapNorthCenter", "mapNorthSouth", "mapCenterSouth"];
 let areaChoices = ["", "", "", ""];
-let areaMapChoices = ["mapNorth", "mapCenter", "mapSouth", "mapGeneral"];
-let natureChoices = ["", "", "", ""];
-let natureTypes = ["", "", "", ""];
-let natureLabels = ["", "", "", ""];
+let natureLabels = ["💧 מים", "🌳 יער וצל", "🏞️ נוף", "🌵 מדבר"];
+let effortDimIds = ["effortGreenDim", "effortYellowDim", "effortOrangeDim", "effortRedDim"];
+let effortFullIds = ["effortGreenFull", "effortYellowFull", "effortOrangeFull", "effortRedFull"];
+let effortArrowIds = ["effortArrowGreen", "effortArrowYellow", "effortArrowOrange", "effortArrowRed"];
 
-function showTrailMap(map) {
-    for (let i = 0; i < maps.length; i++) {
-        document.getElementById(maps[i]).hidden = true;
-    }
-
-    document.getElementById(map).hidden = false;
-}
-
+// מכניס טקסט לתיבה קטנה שמופיעה על המפה
 function putInfo(id, text) {
     document.getElementById(id).innerHTML = text;
     document.getElementById(id).hidden = false;
 }
 
-function hideInfo(id) {
-    document.getElementById(id).hidden = true;
-}
-
+// שומר את השם שהמשתמש כתב
 function writeTravelerName() {
     travelerName = document.getElementById("travelerName").value;
     checkTrailReady();
 }
 
+// שומר את ההערות החופשיות
 function writeTrailNotes() {
     trailNotes = document.getElementById("trailNotes").value;
 }
 
+// מחבר כמה בחירות למשפט אחד עם פסיקים
 function joinChoices(list) {
     let text = "";
 
@@ -70,30 +61,7 @@ function joinChoices(list) {
     return text;
 }
 
-function countChoices(list) {
-    let total = 0;
-
-    for (let i = 0; i < list.length; i++) {
-        if (list[i] != "") {
-            total = total + 1;
-        }
-    }
-
-    return total;
-}
-
-function hasChoice(list, word) {
-    let found = false;
-
-    for (let i = 0; i < list.length; i++) {
-        if (list[i] == word) {
-            found = true;
-        }
-    }
-
-    return found;
-}
-
+// בודק אם אפשר להפעיל את כפתור ההמלצה
 function checkTrailReady() {
     if (travelerName != "" && chosenArea != "" && chosenTime != "" && chosenWith != "" && chosenNature != "" && chosenEffort != "" && chosenSeason != "") {
         document.getElementById("findTrailButton").disabled = false;
@@ -103,31 +71,53 @@ function checkTrailReady() {
     }
 }
 
-function chooseAreaMap() {
-    let total = countChoices(areaChoices);
-
-    if (total == 1) {
-        for (let i = 0; i < areaChoices.length; i++) {
-            if (areaChoices[i] != "") {
-                chosenMap = areaMapChoices[i];
-            }
-        }
+// מחליף בין חלק שקוף של מפה לבין חלק מלא של מפה
+function showOneMapPart(dimId, brightId, showBright) {
+    if (showBright == true) {
+        document.getElementById(dimId).hidden = true;
+        document.getElementById(brightId).hidden = false;
     }
     else {
-        chosenMap = "mapGeneral";
-    }
-
-    if (areaChoices[0] != "" && areaChoices[1] != "" && areaChoices[2] == "" && areaChoices[3] == "") {
-        chosenMap = "mapNorthCenter";
-    }
-    if (areaChoices[0] != "" && areaChoices[2] != "" && areaChoices[1] == "" && areaChoices[3] == "") {
-        chosenMap = "mapNorthSouth";
-    }
-    if (areaChoices[1] != "" && areaChoices[2] != "" && areaChoices[0] == "" && areaChoices[3] == "") {
-        chosenMap = "mapCenterSouth";
+        document.getElementById(dimId).hidden = false;
+        document.getElementById(brightId).hidden = true;
     }
 }
 
+// מדליק צבע אחד בסולם הקושי ומציג עליו את החץ
+function updateEffortScale(place) {
+    for (let i = 0; i < effortDimIds.length; i++) {
+        document.getElementById(effortDimIds[i]).hidden = false;
+        document.getElementById(effortFullIds[i]).hidden = true;
+        document.getElementById(effortArrowIds[i]).hidden = true;
+    }
+
+    document.getElementById(effortDimIds[place]).hidden = true;
+    document.getElementById(effortFullIds[place]).hidden = false;
+    document.getElementById(effortArrowIds[place]).hidden = false;
+}
+
+// מדליק את חלקי המפה לפי האזורים שסומנו
+function updateAreaMapParts() {
+    let showNorth = false;
+    let showCenter = false;
+    let showSouth = false;
+
+    if (areaChoices[0] != "" || areaChoices[3] != "") {
+        showNorth = true;
+    }
+    if (areaChoices[1] != "" || areaChoices[3] != "") {
+        showCenter = true;
+    }
+    if (areaChoices[2] != "" || areaChoices[3] != "") {
+        showSouth = true;
+    }
+
+    showOneMapPart("mapNorthDim", "mapNorthFull", showNorth);
+    showOneMapPart("mapCenterDim", "mapCenterFull", showCenter);
+    showOneMapPart("mapSouthDim", "mapSouthFull", showSouth);
+}
+
+// בחירת אזור בארץ
 function chooseAreaBox(area, place) {
     if (areaChoices[place] == "") {
         areaChoices[place] = area;
@@ -137,54 +127,40 @@ function chooseAreaBox(area, place) {
     }
 
     chosenArea = joinChoices(areaChoices);
-    chooseAreaMap();
-
-    showTrailMap(chosenMap);
+    updateAreaMapParts();
     checkTrailReady();
 }
 
+// בחירת זמן לטיול
 function chooseTime(time, text) {
     chosenTime = time;
     putInfo("timeInfo", text);
     checkTrailReady();
 }
 
+// בחירת עם מי יוצאים לטיול
 function chooseWith(tripWith, text) {
     chosenWith = tripWith;
     putInfo("withInfo", text);
     checkTrailReady();
 }
 
-function chooseNatureBox(nature, type, text, place) {
-    if (natureChoices[place] == "") {
-        natureChoices[place] = nature;
-        natureTypes[place] = type;
-        natureLabels[place] = text;
-    }
-    else {
-        natureChoices[place] = "";
-        natureTypes[place] = "";
-        natureLabels[place] = "";
-    }
-
-    chosenNature = joinChoices(natureChoices);
-    chosenNatureType = joinChoices(natureTypes);
-
-    if (chosenNature == "") {
-        hideInfo("natureInfo");
-    }
-    else {
-        putInfo("natureInfo", joinChoices(natureLabels));
-    }
-
+// בחירת סוג הטבע הרצוי
+function chooseNature(nature, type, place) {
+    chosenNature = nature;
+    chosenNatureType = type;
+    putInfo("natureInfo", natureLabels[place]);
     checkTrailReady();
 }
 
-function chooseEffort(effort) {
+// בחירת רמת מאמץ
+function chooseEffort(effort, place) {
     chosenEffort = effort;
+    updateEffortScale(place);
     checkTrailReady();
 }
 
+// בחירת עונה
 function chooseSeason(season, type, text) {
     chosenSeason = season;
     chosenSeasonType = type;
@@ -192,19 +168,20 @@ function chooseSeason(season, type, text) {
     checkTrailReady();
 }
 
+// בונה משפט המלצה לפי סוג הטבע והעונה שנבחרו
 function getTrailTip() {
     let tip = "כדאי לבחור מסלול קרוב ונוח שמאפשר לכם לצאת בלי יותר מדי תכנון.";
 
-    if (hasChoice(natureTypes, "water")) {
+    if (chosenNatureType == "water") {
         tip = "כדאי להתחיל ממסלול נחל קצר, מעיין נגיש או מקום עם מים שאפשר לעצור בו.";
     }
-    if (hasChoice(natureTypes, "forest")) {
+    if (chosenNatureType == "forest") {
         tip = "כדאי לבחור חורשה, יער מוצל או פארק טבע עם שביל הליכה רגוע.";
     }
-    if (hasChoice(natureTypes, "view")) {
+    if (chosenNatureType == "view") {
         tip = "כדאי לחפש תצפית יפה, שביל נוף או מסלול עם נקודת עצירה לתמונה.";
     }
-    if (hasChoice(natureTypes, "desert")) {
+    if (chosenNatureType == "desert") {
         tip = "כדאי לבחור מסלול פתוח ושקט, במיוחד בשעות נעימות ולא חמות מדי.";
     }
 
@@ -224,9 +201,9 @@ function getTrailTip() {
     return tip;
 }
 
+// מציג את סיכום הבחירות וההמלצה בתוך תיבת התוצאה
 function findTrail() {
     if (chosenArea == "" || chosenTime == "" || chosenWith == "" || chosenNature == "" || chosenEffort == "" || chosenSeason == "") {
-        alert("חסרה בחירה אחת או יותר. סמנו תשובה בכל שאלה ואז לחצו שוב על הכפתור.");
         document.getElementById("trailResult").innerHTML = "יש לענות על כל השאלות כדי לקבל המלצה מתאימה.";
         document.getElementById("trailResult").hidden = false;
     }
@@ -249,6 +226,6 @@ function findTrail() {
 
         document.getElementById("trailResult").innerHTML = trailText;
         document.getElementById("trailResult").hidden = false;
-        showTrailMap(chosenMap);
+        updateAreaMapParts();
     }
 }
